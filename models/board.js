@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const boardSchema = new Schema(
   {
     name: String,
-    user: { type: Schema.Types.ObjectId, ref: "User" }
+    user: { type: Schema.Types.ObjectId, ref: "User" },
+    pictures: { type: Schema.Types.String, ref: "Picture" }
   },
   {
     timestamps: true
