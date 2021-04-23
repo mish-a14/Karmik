@@ -53,10 +53,10 @@ export default class Signup extends React.Component {
         <div>
             <form>
             Welcome to Karmik! Please sign up below <br />
-            <input placeholder='NAME' name='name' required/><br />
-            <input placeholder='E-MAIL'name='email' type='email' required onChange={this.handleChange}/><br />
-            <input placeholder='PASSWORD' name='name' type='password' required onChange={this.handleChange}/><br />
-            <input placeholder='CONFIRM PASSWORD' name='confirmpassword' required  onChange={this.handleChange}/><br />
+            <input value={this.state.name} placeholder='NAME' name='name' required onChange={this.handleChange}/><br />
+            <input value={this.state.email} placeholder='E-MAIL'name='email' type='email' required onChange={this.handleChange}/><br />
+            <input value={this.state.password} placeholder='PASSWORD' name='password' type='password' required onChange={this.handleChange}/><br />
+            <input value={this.state.confirm} placeholder='CONFIRM PASSWORD' name='confirm' type='password' required  onChange={this.handleChange}/><br />
             
             
             <button disabled={buttonDisabled} onClick={this.handleSubmit}>Sign up!</button>

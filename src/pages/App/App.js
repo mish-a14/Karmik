@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import {Route, Switch, Redirect} from 'react-router-dom'
-
 import NavBar from '../../components/NavBar/NavBar.jsx'
 import Signup from '../Signup/Signup.jsx'
 import Login from '../Login/Login.jsx'
-
+import AuthPage from '../AuthPage/AuthPage'
+import { Route, Switch, Redirect } from "react-router-dom";
 
 class App extends Component {
-
   state = {
     user:null,
   }
@@ -50,6 +48,4 @@ class App extends Component {
   }
 }
 
-
 export default App;
-
