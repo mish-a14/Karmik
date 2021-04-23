@@ -10,6 +10,14 @@ class App extends Component {
     this.setState({ user: incomingUserData });
   };
 
+  componentDidMount() {
+    let token = localStorage.getItem("token");
+    if (token) {
+      let userDoc = JSON.parse(atob(token.split(".")[1])).user;
+      this.setState({ user: userDoc });
+    }
+  }
+
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (

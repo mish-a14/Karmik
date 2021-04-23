@@ -8,4 +8,4 @@ router.post("/signup", usersCtrl.create);
 //post /api/users/login
 router.post("/login", usersCtrl.login);
 
-modules.exports = router;
+module.exports = router;
