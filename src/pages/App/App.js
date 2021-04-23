@@ -5,6 +5,10 @@ import Signup from "../Signup/Signup.jsx";
 import Login from "../Login/Login.jsx";
 import AuthPage from "../AuthPage/AuthPage";
 import { Route, Switch, Redirect } from "react-router-dom";
+import HomePage from '../HomePage/HomePage';
+import BoardPage from '../BoardPage/BoardPage';
+
+
 
 class App extends Component {
   state = {
@@ -25,22 +29,17 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h1>Karmik</h1>
-        <NavBar user={this.state.user} />
-
-        <Switch>
-          <Route path="/login" render={props => <Login {...props} />} />
-
-          <Route
-            path="/signup"
-            render={props => (
-              <Signup {...props} putUserIntoState={this.putUserIntoState} />
-            )}
-          />
-          <Redirect to="/" />
-        </Switch>
+    return(
+      <div className="App">
+          <Switch>
+            <Route path='/home' render={(props) => (
+              <HomePage {...props}/> 
+            )}/>
+            <Route path='/board' render={(props) => (
+              <BoardPage {...props}/>
+            )}/>
+            <Redirect to='/home' />
+          </Switch>
       </div>
     );
   }
