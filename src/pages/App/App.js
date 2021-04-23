@@ -2,29 +2,24 @@ import React, { Component } from "react";
 import "./App.css";
 import AuthPage from '../AuthPage/AuthPage'
 import { Route, Switch, Redirect } from "react-router-dom";
+import HomePage from '../HomePage/HomePage';
+import BoardPage from '../BoardPage/BoardPage';
 
-class App extends Component {
-
-  state = {
-    user:null,
-  }
-  
-  setUserInState = (incomingUserData) => {
-    this.setState({ user: incomingUserData})
-  }
+class App extends React.Component {
 
 
   render() {
     return(
-      <div>
-        <div>Karmik</div>
-        { this.state.user ?
+      <div className="App">
           <Switch>
-            <Route/>
+            <Route path='/home' render={(props) => (
+              <HomePage {...props}/> 
+            )}/>
+            <Route path='/board' render={(props) => (
+              <BoardPage {...props}/>
+            )}/>
+            <Redirect to='/home' />
           </Switch>
-          :
-          <AuthPage setUserInState={this.setUserInState}/>
-        } 
       </div>
     );
   }
