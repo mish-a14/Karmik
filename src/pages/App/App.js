@@ -41,6 +41,10 @@ class App extends Component {
     }
   };
 
+  setUserInState = incomingUserData => {
+    this.setState({ user: incomingUserData });
+  };
+
   componentDidMount() {
     let token = localStorage.getItem("token");
     if (token) {
@@ -54,6 +58,8 @@ class App extends Component {
   };
 
   render() {
+    //// TODO:  decalare on setUser
+
     return (
       <div>
         <div>Karmik</div>
