@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
+<<<<<<< HEAD
 import AuthPage from "../AuthPage/AuthPage";
 import { Route, Switch } from "react-router-dom";
+=======
+import AuthPage from '../AuthPage/AuthPage'
+import { Route, Switch, Redirect } from "react-router-dom";
+>>>>>>> master
 
 class App extends Component {
   state = {
