@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import AuthPage from "../AuthPage/AuthPage";
-import { Route, Switch } from "react-router";
+import { Route, Switch } from "react-router-dom";
 
 class App extends Component {
   state = {
+    user: null,
     name: "",
     email: "",
     password: "",
@@ -56,12 +57,13 @@ class App extends Component {
     return (
       <div>
         <div>Karmik</div>
+        <AuthPage setUserInState={this.setUserInState} />
         {this.state.user ? (
           <Switch>
             <Route />
           </Switch>
         ) : (
-          <AuthPage setUserInState={this.setUserInState} />
+          <h1>Ope</h1>
         )}
       </div>
     );
