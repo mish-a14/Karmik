@@ -18,6 +18,9 @@ class App extends React.Component {
             <Route path='/board' render={(props) => (
               <BoardPage {...props}/>
             )}/>
+            <Route path='/auth' render={(props) => (
+              <AuthPage {...props}/>
+            )}/>
             <Redirect to='/home' />
           </Switch>
       </div>

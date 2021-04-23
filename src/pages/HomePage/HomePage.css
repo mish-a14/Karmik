@@ -62,6 +62,7 @@ button {
   border-radius: 8px;
   outline: none;
   border: 1px solid slategrey;
+  background-color: #f7ede4;
 }
 
 button a {
