@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import AuthPage from '../AuthPage/AuthPage'
-import { Route, Switch } from "react-router";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 class App extends Component {
 
