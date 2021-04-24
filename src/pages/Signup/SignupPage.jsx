@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
+import './SignupPage.css'
 
 export default class SignupPage extends React.Component {
 
@@ -50,21 +52,33 @@ export default class SignupPage extends React.Component {
         }
         
     return(
-        <div>
+        <div className="signup">
+        <nav>
+          <Link to="/home">karmik</Link>
+        </nav>
+        <div className="contain">
+        <div className="form">
             <form>
-            welcome to karmik! please sign up below <br />
-            <input value={this.state.name} placeholder='NAME' name='name' required onChange={this.handleChange}/><br />
-            <input value={this.state.email} placeholder='E-MAIL'name='email' type='email' required onChange={this.handleChange}/><br />
-            <input value={this.state.password} placeholder='PASSWORD' name='password' type='password' required onChange={this.handleChange}/><br />
-            <input value={this.state.confirm} placeholder='CONFIRM PASSWORD' name='confirm' type='password' required  onChange={this.handleChange}/><br />
+            welcome to karmik! please sign up below <br /><br />
+            <div>
+            <input value={this.state.name} placeholder='NAME' name='name' required onChange={this.handleChange}/>
+            </div>
+            <div>
+            <input value={this.state.email} placeholder='E-MAIL'name='email' type='email' required onChange={this.handleChange}/>
+            </div>
+            <div>
+            <input value={this.state.password} placeholder='PASSWORD' name='password' type='password' required onChange={this.handleChange}/>
+            </div>
+            <div>
+            <input value={this.state.confirm} placeholder='CONFIRM PASSWORD' name='confirm' type='password' required  onChange={this.handleChange}/>
+            </div>
             
-            
-            <button disabled={buttonDisabled} onClick={this.handleSubmit}>Sign up!</button>
+            <button disabled={buttonDisabled} onClick={this.handleSubmit}>sign up!</button>
             </form>
-
+            </div>
             {this.state.error}
             <br />
-
+        </div>
         </div>
     )
     }
