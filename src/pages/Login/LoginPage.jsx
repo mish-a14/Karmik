@@ -1,6 +1,8 @@
 import { Component } from 'react';
+import {Link} from 'react-router-dom';
+import './LoginPage.css'
 
-export default class SignUpForm extends Component {
+export default class LoginPage extends Component {
   state = {
     email: '',
     password: '',
@@ -41,15 +43,30 @@ export default class SignUpForm extends Component {
 
   render() {
     return (
-      <div>
-        <div onSubmit={this.handleSubmit}>
-          <form autoComplete="off" >
+      <div className="login">
+        <nav>
+          <Link to="/home">karmik</Link>
+        </nav>
+        <div className="contain">
+        <div className="form">
+          <form onSubmit={this.handleSubmit} autoComplete="off" >
+            <div>
             <label>Email</label>
+            </div>
+            <div>
             <input type="text" name="email" value={this.state.email} onChange={this.handleChange} required />
+            </div>
+            <div>
             <label>Password</label>
+            </div>
+            <div>
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+            </div>
+            <div className="form-btn">
             <button type="submit">log in</button>
+            </div>
           </form>
+        </div>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
       </div>

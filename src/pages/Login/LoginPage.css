@@ -1,0 +1,46 @@
+.login {
+  min-height: 94vh;
+}
+
+.contain {
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background-color: rgb(90, 112, 90);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 450px;
+  border-radius: 40px;
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+.form input {
+  padding: 7px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.form button {
+  padding: 5px;
+  margin: 20px 0px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f7ede4;
+}
+
+.form button:hover {
+  background-color: whitesmoke;
+}

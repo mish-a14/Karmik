@@ -46,25 +46,30 @@ nav .logo {
   width: 80%;
 }
 
-h2 {
+.home h2 {
   font-size: 60px;
   margin: 60px 0px;
 }
 
-p {
+.home p {
   font-size: 26px;
   margin: 30px 0px;
 }
 
-button {
+.home button {
   margin: 30px 0px;
   padding: 10px 15px;
   border-radius: 8px;
   outline: none;
   border: 1px solid slategrey;
+  background-color: #f7ede4;
 }
 
-button a {
+.home button:hover {
+  background-color: whitesmoke;
+}
+
+.home button a {
   text-decoration: none;
   color: black;
   font-size: 18px;
@@ -108,7 +113,7 @@ button a {
 
 .img3 {
   width: 300px;
-  height: 500px;
+  height: 450px;
   object-fit: cover;
   border-radius: 20px;
 }

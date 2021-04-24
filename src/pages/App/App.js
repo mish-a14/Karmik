@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
-import NavBar from "../../Components/NavBar/NavBar.jsx";
-import Signup from "../Signup/Signup.jsx";
-import Login from "../Login/Login.jsx";
 import AuthPage from "../AuthPage/AuthPage";
 import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from '../HomePage/HomePage';
 import BoardPage from '../BoardPage/BoardPage';
+import LoginPage from '../Login/LoginPage';
+import SignupPage from '../Signup/SignupPage'
 
 
 
@@ -37,6 +36,15 @@ class App extends Component {
             )}/>
             <Route path='/board' render={(props) => (
               <BoardPage {...props}/>
+            )}/>
+            <Route path='/auth' render={(props) => (
+              <AuthPage {...props}/>
+            )}/>
+            <Route path='/login' render={(props) => (
+              <LoginPage {...props}/>
+            )}/>
+            <Route path='/signup' render={(props) => (
+              <SignupPage {...props}/>
             )}/>
             <Redirect to='/home' />
           </Switch>
