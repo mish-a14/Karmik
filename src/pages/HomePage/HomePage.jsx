@@ -12,8 +12,8 @@ function HomePage(props) {
                 <Link to="/home">karmik</Link>
             </div>
             <div className="links">
-                <Link to="/auth">login</Link>
-                <Link to="/auth">signup</Link>
+                <Link to="/login">login</Link>
+                <Link to="/signup">signup</Link>
             </div>
         </nav>
         <Home />

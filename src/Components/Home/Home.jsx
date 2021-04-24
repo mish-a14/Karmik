@@ -10,7 +10,7 @@ function Home(props) {
                 <p>create custom vision boards to stay inspired and on track with your goals.</p>
                 </div>
                 <div className="btn-div">
-                    <button><Link to="/auth">sign up</Link></button>
+                    <button><Link to="/signup">sign up</Link></button>
                 </div>
             </div>
 

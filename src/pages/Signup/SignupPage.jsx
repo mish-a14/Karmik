@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class Signup extends React.Component {
+export default class SignupPage extends React.Component {
 
     state= {
         name: "",
@@ -52,7 +52,7 @@ export default class Signup extends React.Component {
     return(
         <div>
             <form>
-            Welcome to Karmik! Please sign up below <br />
+            welcome to karmik! please sign up below <br />
             <input value={this.state.name} placeholder='NAME' name='name' required onChange={this.handleChange}/><br />
             <input value={this.state.email} placeholder='E-MAIL'name='email' type='email' required onChange={this.handleChange}/><br />
             <input value={this.state.password} placeholder='PASSWORD' name='password' type='password' required onChange={this.handleChange}/><br />
