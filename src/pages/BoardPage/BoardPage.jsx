@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Board from '../../Components/Board/Board';
+import Board from '../../components/Board/Board';
 
 
 function BoardPage(props) {

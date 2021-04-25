@@ -45,7 +45,7 @@ export default class SignupPage extends React.Component {
 
     render() {
         let buttonDisabled = false; 
-        if (this.state.password != this.state.confirm) {
+        if (this.state.password !== this.state.confirm) {
             buttonDisabled = true; 
         } else {
             buttonDisabled = false; 

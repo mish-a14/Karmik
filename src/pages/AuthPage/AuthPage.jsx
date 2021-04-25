@@ -1,8 +1,8 @@
 import React from "react";
 import "./AuthPage.css";
 // import Logo from '../../components/Logo/Logo';
-import LoginForm from "../../Components/LoginForm/LoginForm";
-import SignUpForm from "../../Components/SignUpForm/SignUpForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 export default class AuthPage extends React.Component {
   state = {
