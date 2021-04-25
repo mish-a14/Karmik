@@ -117,3 +117,62 @@ nav .logo {
   object-fit: cover;
   border-radius: 20px;
 }
+
+@media screen and (max-width: 1000px) {
+  .img1 {
+    width: 300px;
+    height: 200px;
+    margin-top: 70px;
+  }
+  .img2 {
+    width: 220px;
+    height: 180px;
+  }
+  .img3 {
+    width: 160px;
+    height: 300px;
+  }
+  .links {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .home {
+    flex-direction: column-reverse;
+  }
+  .pic-half,
+  .text-half {
+    width: 100%;
+    text-align: center;
+  }
+  .bottom {
+    width: 100%;
+    min-height: 2vh;
+    margin: 100px 0px 20px 0px;
+  }
+  .top {
+    display: none;
+  }
+  .img1,
+  .img3 {
+    display: none;
+  }
+  .img2 {
+    width: 300px;
+    height: 260px;
+  }
+  .home h2 {
+    font-size: 32px;
+    margin: 40px 0px;
+  }
+  .home p {
+    font-size: 20px;
+  }
+  .links {
+    width: 50%;
+  }
+  .home button {
+    margin: 15px 0px;
+  }
+}
