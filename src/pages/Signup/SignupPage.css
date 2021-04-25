@@ -45,3 +45,18 @@
 .form button:hover {
   background-color: whitesmoke;
 }
+
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .form {
+    width: 90%;
+  }
+  .form input {
+    padding: 2px;
+  }
+}
