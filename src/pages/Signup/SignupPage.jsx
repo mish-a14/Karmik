@@ -19,24 +19,17 @@ export default class SignupPage extends React.Component {
     
     handleSubmit = async (evt) => {
         evt.preventDefault();
-
         try { 
-
         let fetchResponse = await fetch('/api/users/signup', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ name: this.state.name, email: this.state.email, password: this.state.password })
         })
-        console.log("HELLO< CAN YOU SEE ME?")
         if (!fetchResponse.ok) throw new Error ('fetch failed!')
-        console.log("before token")
         let token = await fetchResponse.json()
         localStorage.setItem('token', token)
-        console.log("AHHHHHHHHHHHHHHHHH")
         const userDoc = JSON.parse(atob(token.split('.')[1])).user;
-        console.log(token)
-        this.props.setUserIntoState(userDoc)
-        
+        this.props.setUserInState(userDoc)
     } catch(err) {
         console.log("Signup Error", err) 
         this.setState({ error: 'Signup Failed. Please try again!'})
