@@ -7,7 +7,8 @@ import './BoardPage.css'
 class BoardPage extends React.Component {
 
     state = {
-        myBoards: []
+        myBoards: [],
+        user: null
     }
 
     async componentDidMount() {
@@ -41,3 +42,6 @@ class BoardPage extends React.Component {
 
 
 export default BoardPage;
+
+
+
