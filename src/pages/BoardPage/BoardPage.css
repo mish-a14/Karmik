@@ -2,3 +2,31 @@
   min-height: 94vh;
   width: 100%;
 }
+
+.the-boards {
+  width: 100%;
+  min-height: 94vh;
+  display: flex;
+  align-items: center;
+}
+
+.prev-boards {
+  width: 20%;
+  background-color: antiquewhite;
+  margin: 0px 30px;
+  min-height: 80vh;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase {
+  width: 70%;
+  min-height: 80vh;
+  background-color: antiquewhite;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

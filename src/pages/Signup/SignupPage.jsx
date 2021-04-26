@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import './SignupPage.css'
 
 export default class SignupPage extends React.Component {
@@ -34,7 +34,8 @@ export default class SignupPage extends React.Component {
         localStorage.setItem('token', token)
 
         const userDoc = JSON.parse(atob(token.split('.')[1])).user;
-        this.props.putUserIntoState(userDoc)
+        this.props.putUserIntoState(userDoc);
+        <Redirect to='/board' />
 
     } catch(err) {
         console.log("Signup Error", err) 

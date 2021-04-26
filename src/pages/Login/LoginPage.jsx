@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import './LoginPage.css'
 
 export default class LoginPage extends Component {
@@ -33,7 +33,8 @@ export default class LoginPage extends Component {
       localStorage.setItem('token', token);  // 4. Stick token into localStorage
 
       const userDoc = JSON.parse(atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
-      this.props.setUserInState(userDoc)
+      this.props.setUserInState(userDoc);
+      <Redirect to='/board' />
 
     } catch (err) {
       console.log("SignupForm error", err)
