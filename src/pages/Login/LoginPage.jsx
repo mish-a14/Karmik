@@ -34,11 +34,11 @@ export default class LoginPage extends Component {
 
       const userDoc = JSON.parse(atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
       this.props.setUserInState(userDoc);
-      <Redirect to='/board' />
+      this.props.history.push("/board")
 
     } catch (err) {
-      console.log("SignupForm error", err)
-      this.setState({ error: 'Sign Up Failed - Try Again' });
+      console.log("LoginPage error", err)
+      this.setState({ error: 'Login Failed - Try Again' });
     }
   }
 
