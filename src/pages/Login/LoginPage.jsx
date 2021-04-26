@@ -45,7 +45,9 @@ export default class LoginPage extends Component {
     return (
       <div className="login">
         <nav>
+          <div className="logo">
           <Link to="/home">karmik</Link>
+          </div>
         </nav>
         <div className="contain">
         <div className="form">
