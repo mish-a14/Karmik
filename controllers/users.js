@@ -17,7 +17,7 @@ async function create(req, res) {
 
     
     const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' });
-    res.json(token); 
+    res.status(200).json(token); 
   } catch (err) {
     res.status(400).json(err);
   }
@@ -31,7 +31,7 @@ async function login(req, res) {
 
 
     const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' });
-    res.json(token)
+    res.status(200).json(token);   
   } catch {
     res.status(400).json('Bad Credentials');
   }

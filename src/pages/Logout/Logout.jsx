@@ -1,16 +1,17 @@
-import React from 'react';
-import './Logout.css'
+import React, {Component} from 'react';
+// import './Logout.css'
 
 class Logout extends React.Component {
+
   render() {
+    console.log("AHHHHHHHHHHHHHHHHHHHH");
   return (
       <div>
-        <div>Name: ??</div>
-        <div>Email: ??</div>
         <button>Logout</button>
       </div>
   );
   }
+  
 }
 
 export default Logout;

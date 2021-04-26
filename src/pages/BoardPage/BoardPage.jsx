@@ -8,7 +8,7 @@ class BoardPage extends React.Component {
 
     state = {
         myBoards: [],
-        user: null
+        // user: null
     }
 
     async componentDidMount() {
@@ -30,8 +30,7 @@ class BoardPage extends React.Component {
                 <Link to="/home">karmik</Link>
             </div>
             <div className="links">
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Signup</Link>
+                <Link to="/logout">log out</Link>
             </div>
         </nav>
         <Board myBoards={this.state.myBoards} />

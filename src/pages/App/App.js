@@ -6,6 +6,7 @@ import HomePage from '../HomePage/HomePage';
 import BoardPage from '../BoardPage/BoardPage';
 import LoginPage from '../Login/LoginPage';
 import SignupPage from '../Signup/SignupPage'
+import Logout from '../Logout/Logout';
 
 
 
@@ -41,10 +42,13 @@ class App extends Component {
               <AuthPage {...props}/>
             )}/>
             <Route path='/login' render={(props) => (
-              <LoginPage {...props}/>
+              <LoginPage setUserInState={this.setUserInState} {...props}/>
             )}/>
             <Route path='/signup' render={(props) => (
-              <SignupPage {...props}/>
+              <SignupPage setUserInState={this.setUserInState} {...props}/>
+            )}/>
+            <Route path='/home' render={(props) => (
+              <Logout {...props}/>
             )}/>
             <Redirect to='/home' />
           </Switch>

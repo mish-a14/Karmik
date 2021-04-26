@@ -6,7 +6,8 @@ export default class LoginPage extends Component {
   state = {
     email: '',
     password: '',
-    error: ''
+    error: '',
+    redirect: '/board'
   };
 
   handleChange = (evt) => {
@@ -34,7 +35,6 @@ export default class LoginPage extends Component {
 
       const userDoc = JSON.parse(atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
       this.props.setUserInState(userDoc);
-      <Redirect to='/board' />
 
     } catch (err) {
       console.log("SignupForm error", err)
@@ -43,6 +43,11 @@ export default class LoginPage extends Component {
   }
 
   render() {
+
+    if (this.state.email.length > 0) {
+      return <Redirect to={this.state.redirect} />
+    }
+
     return (
       <div className="login">
         <nav>
@@ -71,7 +76,7 @@ export default class LoginPage extends Component {
           </form>
         </div>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+        <p className="error-message">&nbsp;{this.state.error}</p>   
       </div>
     );
   }
