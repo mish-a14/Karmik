@@ -30,7 +30,7 @@ async function login(req, res) {
 
 
     const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' });
-    res.json(token)
+    res.status(200).json
   } catch {
     res.status(400).json('Bad Credentials');
   }
