@@ -30,6 +30,7 @@ export default class SignupPage extends React.Component {
         localStorage.setItem('token', token)
         const userDoc = JSON.parse(atob(token.split('.')[1])).user;
         this.props.setUserInState(userDoc)
+        this.props.history.push("/board")
     } catch(err) {
         console.log("Signup Error", err) 
         this.setState({ error: 'Signup Failed. Please try again!'})

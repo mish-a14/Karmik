@@ -47,8 +47,8 @@ class App extends Component {
             <Route path='/signup' render={(props) => (
               <SignupPage setUserInState={this.setUserInState} {...props}/>
             )}/>
-            <Redirect to='/home' />
             <Images />
+            <Redirect to='/home' />
           </Switch>
       </div>
     );
