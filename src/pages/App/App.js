@@ -6,7 +6,8 @@ import HomePage from '../HomePage/HomePage';
 import BoardPage from '../BoardPage/BoardPage';
 import LoginPage from '../Login/LoginPage';
 import SignupPage from '../Signup/SignupPage'
-
+import Images from '../../components/Images/Images.jsx'
+// import ImageUploader from 'react-images-upload';
 
 
 class App extends Component {
@@ -38,15 +39,16 @@ class App extends Component {
               <BoardPage {...props}/>
             )}/>
             <Route path='/auth' render={(props) => (
-              <AuthPage {...props}/>
+              <AuthPage setUserInState={this.setUserInState} {...props}/>
             )}/>
             <Route path='/login' render={(props) => (
-              <LoginPage {...props}/>
+              <LoginPage setUserInState={this.setUserInState} {...props}/>
             )}/>
             <Route path='/signup' render={(props) => (
-              <SignupPage {...props}/>
+              <SignupPage setUserInState={this.setUserInState} {...props}/>
             )}/>
             <Redirect to='/home' />
+            <Images />
           </Switch>
       </div>
     );

@@ -1,8 +1,8 @@
 import React from "react";
 import "./AuthPage.css";
 // import Logo from '../../components/Logo/Logo';
-import LoginForm from "../../components/LoginForm/LoginForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import LoginPage from "../../pages/Login/LoginPage.jsx"
+import SignUpPage from "../../pages/Signup/SignupPage.jsx"
 
 export default class AuthPage extends React.Component {
   state = {
@@ -20,9 +20,9 @@ export default class AuthPage extends React.Component {
           </h3>
         </div>
         {this.state.showLogin ? (
-          <LoginForm setUserInState={this.props.setUserInState} />
+          <LoginPage setUserInState={this.props.setUserInState} />
         ) : (
-          <SignUpForm setUserInState={this.props.setUserInState} />
+          <SignUpPage setUserInState={this.props.setUserInState} />
         )}
       </main>
     );
