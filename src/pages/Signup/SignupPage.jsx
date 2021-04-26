@@ -54,7 +54,9 @@ export default class SignupPage extends React.Component {
     return(
         <div className="signup">
         <nav>
+        <div className="logo">
           <Link to="/home">karmik</Link>
+          </div>
         </nav>
         <div className="contain">
         <div className="form">
