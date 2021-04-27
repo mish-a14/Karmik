@@ -29,8 +29,7 @@ class BoardPage extends React.Component {
                 <Link to="/home">karmik</Link>
             </div>
             <div className="links">
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Signup</Link>
+                <Link to="/logout">Logout</Link>
             </div>
         </nav>
         <Board myBoards={this.state.myBoards} />

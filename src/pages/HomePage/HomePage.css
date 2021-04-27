@@ -18,13 +18,13 @@ nav .logo {
 }
 
 .home {
-  display: flex;
+  display: flex;  
   min-height: 94vh;
   width: 100%;
 }
 
 .links {
-  width: 25%;
+  width: 150px;
   display: flex;
   justify-content: space-between;
 }
@@ -98,81 +98,56 @@ nav .logo {
 }
 
 .img1 {
-  width: 500px;
-  height: 300px;
+  width: auto;
+  height: 90%;
   object-fit: cover;
   border-radius: 20px;
 }
 
 .img2 {
-  width: 400px;
-  height: 300px;
+  width: 50%;
+  height: auto;
   object-fit: cover;
   border-radius: 20px;
 }
 
 .img3 {
-  width: 300px;
-  height: 450px;
+  width: 30%;
+  height: auto;
   object-fit: cover;
   border-radius: 20px;
 }
 
-@media screen and (max-width: 1000px) {
-  .img1 {
-    width: 300px;
-    height: 200px;
-    margin-top: 70px;
-  }
-  .img2 {
-    width: 220px;
-    height: 180px;
-  }
-  .img3 {
-    width: 160px;
-    height: 300px;
-  }
-  .links {
-    width: 40%;
-  }
+.menu-button{
+  margin-left: 150px;
 }
 
-@media screen and (max-width: 800px) {
-  .home {
-    flex-direction: column-reverse;
+@media screen and (max-width: 600px) {
+  .home{
+    flex-direction: column;
   }
-  .pic-half,
+  .pic-half{
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    order: 1;
+  }
+.img2{
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+
   .text-half {
-    width: 100%;
-    text-align: center;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    order: 2;
   }
-  .bottom {
-    width: 100%;
-    min-height: 2vh;
-    margin: 100px 0px 20px 0px;
+  .text > h2{
+    font-size: 25px;
   }
-  .top {
-    display: none;
-  }
-  .img1,
-  .img3 {
-    display: none;
-  }
-  .img2 {
-    width: 300px;
-    height: 260px;
-  }
-  .home h2 {
-    font-size: 32px;
-    margin: 40px 0px;
-  }
-  .home p {
+  .text > p {
     font-size: 20px;
-  }
-  .links {
-    width: 50%;
-  }
-  .home button {
-    margin: 15px 0px;
   }
 }
