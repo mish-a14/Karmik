@@ -36,18 +36,19 @@ class App extends Component {
 
   render() {
     return(
-      <div className="Apxp">
+      <div className="App">
         
           <Switch>
             {/* <BoardForm/><Images /> */}
 
-            <Route path='/experiment' render={(props) => (
-              <BoardForm {...props} />
-            )}
+            <Route path='/boardform' render={(props) => (
+              <BoardForm {...props} user= {this.state.user}/>
+            )}/>
             
             <Route path='/home' render={(props) => (
               <HomePage {...props}/> 
             )}/>
+
             <Route path='/board' render={(props) => (
               <BoardPage setUserBackToNull={this.setUserBackToNull} {...props}/>
             )}/>

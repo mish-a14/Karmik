@@ -109,7 +109,7 @@ function Board(props) {
             <>
             <p className="no-boards">hmm...no vision boards yet!</p> 
             <div className="btn-div">
-            <button>+</button>
+            <button><Link to="/boardform">+</Link></button>
             </div>
             </>
             </div>   

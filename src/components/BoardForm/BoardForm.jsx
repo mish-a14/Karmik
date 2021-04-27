@@ -5,6 +5,15 @@ import Images from '../Images/Images.jsx'
 
 
 class BoardForm extends Component {
+    state= {
+        name: "", 
+        pictures: ""
+    }
+
+    handleChange = (evt) => {
+        this.setState({ [evt.target.name] : evt.target.value})
+    }
+
     handleOnClick = async (evt) => {
         evt.preventDefault()
         try {
@@ -12,9 +21,8 @@ class BoardForm extends Component {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(
-                    { name: "mishalboard",
-                     user: "608728bd6618a095df965d66",
-                     pictures: "pictures" })
+                    {name: this.state.name,
+                     pictures: this.state.pictures })
             })
             let serverResponse = await fetchResponse.json()
             console.log("Success:", serverResponse)
@@ -30,9 +38,8 @@ class BoardForm extends Component {
         return(
 
             <form>
-            Name: <input name="name" value="mishalboard" />
-            User: <input name="user" value="dor" />
-            pictures: <input name="pictures" value="pictures"/>
+            Name: <input name="name" value={this.state.name} onChange={this.handleChange} />
+            Add Pictures: <input name="pictures" value={this.state.pictures} onChange={this.handleChange}/>
             <button onClick = {(evt) => 
             {this.handleOnClick(evt)}}>test</button>
             </form> 
