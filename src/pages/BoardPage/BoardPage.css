@@ -12,7 +12,7 @@
 
 .prev-boards {
   width: 20%;
-  background-color: antiquewhite;
+  background-color: #f7ede4;
   margin: 0px 30px;
   min-height: 80vh;
   border-radius: 30px;
@@ -24,7 +24,7 @@
 .showcase {
   width: 70%;
   min-height: 80vh;
-  background-color: antiquewhite;
+  background-color: #f7ede4;
   border-radius: 30px;
   display: flex;
   align-items: center;
