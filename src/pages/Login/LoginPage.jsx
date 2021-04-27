@@ -6,7 +6,8 @@ export default class LoginPage extends Component {
   state = {
     email: '',
     password: '',
-    error: ''
+    error: '',
+    redirect: '/board'
   };
 
   handleChange = (evt) => {
@@ -43,6 +44,8 @@ export default class LoginPage extends Component {
   }
 
   render() {
+
+
     return (
       <div className="login">
         <nav>
@@ -71,7 +74,7 @@ export default class LoginPage extends Component {
           </form>
         </div>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+        <p className="error-message">&nbsp;{this.state.error}</p>   
       </div>
     );
   }
