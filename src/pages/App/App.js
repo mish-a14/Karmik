@@ -7,11 +7,8 @@ import BoardPage from '../BoardPage/BoardPage';
 import LoginPage from '../Login/LoginPage';
 import SignupPage from '../Signup/SignupPage'
 import Images from '../../components/Images/Images.jsx'
-<<<<<<< Updated upstream
 import Logout from '../../components/Logout/Logout'
-=======
 import BoardForm from '../../components/BoardForm/BoardForm'
->>>>>>> Stashed changes
 // import ImageUploader from 'react-images-upload';
 
 
@@ -64,10 +61,7 @@ class App extends Component {
               <SignupPage setUserInState={this.setUserInState} {...props}/>
               
             )}/>
-<<<<<<< Updated upstream
-=======
             
->>>>>>> Stashed changes
             <Redirect to='/home' />
           </Switch>
       </div>
