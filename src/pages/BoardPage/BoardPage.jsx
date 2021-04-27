@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import Board from '../../components/Board/Board';
 import './BoardPage.css'
-
+import Logout from '../../components/Logout/Logout'
 
 class BoardPage extends React.Component {
-
+    
+    
     state = {
-        myBoards: []
+        myBoards: [],
+        // user: null
     }
+    // const history = useHistory();
+    
 
     async componentDidMount() {
         try {
@@ -22,17 +26,18 @@ class BoardPage extends React.Component {
     }
 
     render() {
+       
     return (
         <div className="board">
-        <nav className="nav">
-            <div className="logo">
-                <Link to="/home">karmik</Link>
-            </div>
-            <div className="links">
-                <Link to="/logout">Logout</Link>
-            </div>
-        </nav>
-        <Board myBoards={this.state.myBoards} />
+            <nav className="nav">
+                <div className="logo">
+                    <Link to="/home">karmik</Link>
+                </div>
+                <div className="links">
+                    <Logout setUserBackToNull={this.props.setUserBackToNull} {...this.props}/>              
+                </div>
+            </nav>
+            <Board myBoards={this.state.myBoards} />
         </div>
     )
     }
@@ -40,3 +45,6 @@ class BoardPage extends React.Component {
 
 
 export default BoardPage;
+
+
+
