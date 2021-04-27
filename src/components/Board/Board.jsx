@@ -59,6 +59,7 @@ const styles = (theme) => ({
     const handleClickOpen = () => {
       setOpen(true);
     };
+
     const handleClose = () => {
       setOpen(false);
     };
@@ -85,7 +86,7 @@ const styles = (theme) => ({
     </div>
         )
     } 
-  }
+}
 
 function Board(props) {
 
