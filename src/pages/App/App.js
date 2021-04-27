@@ -7,6 +7,7 @@ import BoardPage from '../BoardPage/BoardPage';
 import LoginPage from '../Login/LoginPage';
 import SignupPage from '../Signup/SignupPage'
 import Images from '../../components/Images/Images.jsx'
+import Logout from '../Logout/Logout'
 // import ImageUploader from 'react-images-upload';
 
 
@@ -47,7 +48,9 @@ class App extends Component {
             <Route path='/signup' render={(props) => (
               <SignupPage setUserInState={this.setUserInState} {...props}/>
             )}/>
-            <Images />
+            <Route path='/logout' render={(props) => (
+              <Logout {...props}/>
+            )}/>
             <Redirect to='/home' />
           </Switch>
       </div>

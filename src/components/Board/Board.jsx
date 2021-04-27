@@ -62,7 +62,7 @@ const styles = (theme) => ({
     const handleClose = () => {
       setOpen(false);
     };
-    handleOnClick = async (evt) => {
+    const handleOnClick = async (evt) => {
         evt.preventDefault()
         return(
             <div>
@@ -85,6 +85,7 @@ const styles = (theme) => ({
     </div>
         )
     } 
+  }
 
 function Board(props) {
 
@@ -138,4 +139,4 @@ function Board(props) {
     )
 }
 
-export default{ Board, CustomizedDialogs };
+export default Board;

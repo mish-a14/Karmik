@@ -2,14 +2,16 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Board from '../../components/Board/Board';
 import './BoardPage.css'
-
+import Logout from '../../components/Logout/Logout'
 
 class BoardPage extends React.Component {
-
+    
+    
     state = {
         myBoards: [],
         // user: null
     }
+
 
     async componentDidMount() {
         try {
@@ -23,17 +25,18 @@ class BoardPage extends React.Component {
     }
 
     render() {
+       
     return (
         <div className="board">
-        <nav className="nav">
-            <div className="logo">
-                <Link to="/home">karmik</Link>
-            </div>
-            <div className="links">
-                <Link to="/logout">log out</Link>
-            </div>
-        </nav>
-        <Board myBoards={this.state.myBoards} />
+            <nav className="nav">
+                <div className="logo">
+                    <Link to="/home">karmik</Link>
+                </div>
+                <div className="links">
+                    <Logout />              
+                </div>
+            </nav>
+            <Board myBoards={this.state.myBoards} />
         </div>
     )
     }

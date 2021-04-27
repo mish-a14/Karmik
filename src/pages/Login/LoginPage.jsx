@@ -45,9 +45,6 @@ export default class LoginPage extends Component {
 
   render() {
 
-    if (this.state.email.length > 0) {
-      return <Redirect to={this.state.redirect} />
-    }
 
     return (
       <div className="login">
