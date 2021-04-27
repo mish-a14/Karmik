@@ -7,7 +7,7 @@ import BoardPage from '../BoardPage/BoardPage';
 import LoginPage from '../Login/LoginPage';
 import SignupPage from '../Signup/SignupPage'
 import Images from '../../components/Images/Images.jsx'
-import Logout from '../Logout/Logout'
+import Logout from '../../components/Logout/Logout'
 // import ImageUploader from 'react-images-upload';
 
 
@@ -15,6 +15,10 @@ class App extends Component {
   state = {
     user: null
   };
+
+  setUserBackToNull = () => {
+    this.setState({user: null})
+  }
 
   setUserInState = userDoc => {
     this.setState({ user: userDoc });
@@ -37,7 +41,7 @@ class App extends Component {
               <HomePage {...props}/> 
             )}/>
             <Route path='/board' render={(props) => (
-              <BoardPage {...props}/>
+              <BoardPage setUserBackToNull={this.setUserBackToNull} {...props}/>
             )}/>
             <Route path='/auth' render={(props) => (
               <AuthPage setUserInState={this.setUserInState} {...props}/>
@@ -47,9 +51,6 @@ class App extends Component {
             )}/>
             <Route path='/signup' render={(props) => (
               <SignupPage setUserInState={this.setUserInState} {...props}/>
-            )}/>
-            <Route path='/logout' render={(props) => (
-              <Logout {...props}/>
             )}/>
             <Redirect to='/home' />
           </Switch>

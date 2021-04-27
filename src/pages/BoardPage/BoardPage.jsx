@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import Board from '../../components/Board/Board';
 import './BoardPage.css'
 import Logout from '../../components/Logout/Logout'
@@ -11,7 +11,8 @@ class BoardPage extends React.Component {
         myBoards: [],
         // user: null
     }
-
+    // const history = useHistory();
+    
 
     async componentDidMount() {
         try {
@@ -33,7 +34,7 @@ class BoardPage extends React.Component {
                     <Link to="/home">karmik</Link>
                 </div>
                 <div className="links">
-                    <Logout />              
+                    <Logout setUserBackToNull={this.props.setUserBackToNull} {...this.props}/>              
                 </div>
             </nav>
             <Board myBoards={this.state.myBoards} />
