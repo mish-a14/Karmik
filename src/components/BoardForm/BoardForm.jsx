@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Images from '../Images/Images.jsx'
-
-
+import Picture from '../Picture/Picture.jsx'
 
 class BoardForm extends Component {
     state= {
         name: "", 
         pictures: ""
     }
-
     handleChange = (evt) => {
         this.setState({ [evt.target.name] : evt.target.value})
     }
-
     handleOnClick = async (evt) => {
         evt.preventDefault()
         try {
@@ -33,22 +29,18 @@ class BoardForm extends Component {
             }
         };
 
-
     render() {
         return(
 
             <form>
-            Name: <input name="name" value={this.state.name} onChange={this.handleChange} />
+            Board Name: <input name="name" value={this.state.name} onChange={this.handleChange} />
             Add Pictures: <input name="pictures" value={this.state.pictures} onChange={this.handleChange}/>
             <button onClick = {(evt) => 
-            {this.handleOnClick(evt)}}>test</button>
+            {this.handleOnClick(evt)}}>Add Board</button>
             </form> 
             
     ) 
-        
     }
-
-    
 }
 
 export default BoardForm;

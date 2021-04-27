@@ -74,19 +74,47 @@
 //         }
 //     }
 
-import React from 'react'
+import React, { Component } from 'react'
 
-class Images extends React.Component {
+class Images extends Component {
     state= {
         name: "",
         url: ""
     }
+
+    handleChange = (evt) => {
+        this.setState({ [evt.target.name] : evt.target.value})
+    }
+
+    handleOnClick = async (evt) => {
+        evt.preventDefault()
+        try {
+            let fetchResponse = await fetch("/api/picture", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(
+                    {name: this.state.name,
+                     board: "6088632bdcf2a6c3e143aecf", 
+                     url: this.state.url })
+            })
+            let serverResponse = await fetchResponse.json()
+            console.log("Success:", serverResponse)
+            alert(serverResponse)
+            this.setState({ name: "" })
+         } catch (err) {
+            console.error("Error:", err)
+            }
+        };
+
+
     render() {
     return(
             <div>Image Uploader Testing
             {/* {content()} */}
-            <input name="name" value={this.state.name} onChange={this.handleChange} />
-            <input name="url" value={this.state.url} onChange={this.handleChange} />
+            name ?<input name="name" value={this.state.name} onChange={this.handleChange} />
+            URL?<input name="url" value={this.state.url} onChange={this.handleChange} />
+            <button onClick = {(evt) => 
+            {this.handleOnClick(evt)}}>Add Image</button>
             </div>
     );
     }

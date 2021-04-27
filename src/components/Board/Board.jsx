@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Images from '../Images/Images.jsx'
+import Picture from '../Picture/Picture.jsx'
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -75,7 +75,7 @@ const styles = (theme) => ({
           Modal title
         </DialogTitle>
         <DialogContent dividers>
-            <Images />
+            <Picture />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
