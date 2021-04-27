@@ -7,7 +7,11 @@ import BoardPage from '../BoardPage/BoardPage';
 import LoginPage from '../Login/LoginPage';
 import SignupPage from '../Signup/SignupPage'
 import Images from '../../components/Images/Images.jsx'
+<<<<<<< Updated upstream
 import Logout from '../../components/Logout/Logout'
+=======
+import BoardForm from '../../components/BoardForm/BoardForm'
+>>>>>>> Stashed changes
 // import ImageUploader from 'react-images-upload';
 
 
@@ -35,8 +39,15 @@ class App extends Component {
 
   render() {
     return(
-      <div className="App">
+      <div className="Apxp">
+        
           <Switch>
+            {/* <BoardForm/><Images /> */}
+
+            <Route path='/experiment' render={(props) => (
+              <BoardForm {...props} />
+            )}
+            
             <Route path='/home' render={(props) => (
               <HomePage {...props}/> 
             )}/>
@@ -51,7 +62,12 @@ class App extends Component {
             )}/>
             <Route path='/signup' render={(props) => (
               <SignupPage setUserInState={this.setUserInState} {...props}/>
+              
             )}/>
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
             <Redirect to='/home' />
           </Switch>
       </div>

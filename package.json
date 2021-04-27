@@ -12,7 +12,11 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+<<<<<<< Updated upstream
     "material-ui-icons": "^1.0.0-beta.36",
+=======
+    "material-ui-icons": "*",
+>>>>>>> Stashed changes
     "mongoose": "^5.12.5",
     "morgan": "^1.10.0",
     "react": "^17.0.2",

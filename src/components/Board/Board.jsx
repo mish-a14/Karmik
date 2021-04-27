@@ -87,7 +87,10 @@ const styles = (theme) => ({
         )
     } 
   } 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 function Board(props) {
 
     let myBoardsArray = props.myBoards.map( b => 
