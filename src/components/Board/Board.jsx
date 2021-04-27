@@ -53,16 +53,16 @@ const styles = (theme) => ({
     },
   }))(MuiDialogActions);
   
-    function CustomizedDialogs() {
+  function CustomizedDialogs() {
     const [open, setOpen] = React.useState(false);
   
     const handleClickOpen = () => {
       setOpen(true);
     };
-
     const handleClose = () => {
       setOpen(false);
     };
+
     const handleOnClick = async (evt) => {
         evt.preventDefault()
         return(
@@ -86,7 +86,7 @@ const styles = (theme) => ({
     </div>
         )
     } 
-}
+  } 
 
 function Board(props) {
 
@@ -121,7 +121,7 @@ function Board(props) {
             myBoardsArray[0] 
             
             <div className="btn-div">
-            <button button onClick = {(evt) => 
+            <button onClick = {(evt) => 
             {this.handleOnClick(evt)}}>+</button>
             </div>
             </>
