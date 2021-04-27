@@ -1,5 +1,6 @@
 import React, {Component, useState, onURLChange} from 'react';
 import ImageUploader from 'react-images-upload';
+import Axios from 'axios'; 
 
 const UploadComponent = props => (
     <form>
@@ -20,7 +21,6 @@ const UploadComponent = props => (
     </form>
 );
 
-
 const Images = () => {
     const [ progress, setProgress ] = useState('getUpload')
     const [url, setImageURL] = useState(undefined)
@@ -40,7 +40,15 @@ const onImage = async (failedImages, successImages) => {
     setProgress('uploading')
 
     try {
-        console.log('successImages', successImages)
+        console.log('successImages', successImages); 
+        const parts = successImages[0].split(';')
+        const mime = parts[0].split(":")[1];
+        const name = parts[1].split('=')[1];
+        const data = parts[2];
+        const res = await Axios.post(url, {mime, name, image: data}); 
+
+        setImageURL(res.data.imageURL)
+        setProgress( 'uploaded' )
     } catch (error) {
         console.log('error in upload', error); 
         setErrorMessage(error.message); 
