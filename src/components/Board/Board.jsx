@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Images from '../Images/Images.jsx'
+import Picture from '../Picture/Picture.jsx'
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -53,16 +53,16 @@ const styles = (theme) => ({
     },
   }))(MuiDialogActions);
   
-    function CustomizedDialogs() {
+  function CustomizedDialogs() {
     const [open, setOpen] = React.useState(false);
   
     const handleClickOpen = () => {
       setOpen(true);
     };
-
     const handleClose = () => {
       setOpen(false);
     };
+
     const handleOnClick = async (evt) => {
         evt.preventDefault()
         return(
@@ -75,7 +75,7 @@ const styles = (theme) => ({
           Modal title
         </DialogTitle>
         <DialogContent dividers>
-            <Images />
+            <Picture />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="primary">
@@ -86,8 +86,7 @@ const styles = (theme) => ({
     </div>
         )
     } 
-}
-
+  } 
 function Board(props) {
 
     let myBoardsArray = props.myBoards.map( b => 
@@ -110,7 +109,7 @@ function Board(props) {
             <>
             <p className="no-boards">hmm...no vision boards yet!</p> 
             <div className="btn-div">
-            <button>+</button>
+            <button><Link to="/boardform">+</Link></button>
             </div>
             </>
             </div>   
@@ -121,7 +120,7 @@ function Board(props) {
             myBoardsArray[0] 
             
             <div className="btn-div">
-            <button button onClick = {(evt) => 
+            <button onClick = {(evt) => 
             {this.handleOnClick(evt)}}>+</button>
             </div>
             </>
