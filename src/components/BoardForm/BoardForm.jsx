@@ -1,3 +1,4 @@
+import { token } from 'morgan';
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Picture from '../Picture/Picture.jsx'
@@ -9,16 +10,17 @@ class BoardForm extends Component {
         pictures: ""
     }
 
-
+   
     handleChange = (evt) => {
         this.setState({ [evt.target.name] : evt.target.value})
     }
     handleOnClick = async (evt) => {
         evt.preventDefault()
-        try {
+        try { 
+            let jwt = localStorage.getItem('token')
             let fetchResponse = await fetch("/api/board", {
                 method: "POST",
-                headers: {"Content-Type": "application/json"},
+                headers: {"Content-Type": "application/json", 'Authorization': 'Bearer ' + jwt},
                 body: JSON.stringify(
                     {name: this.state.name,
                      pictures: this.state.pictures })

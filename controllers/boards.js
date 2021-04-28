@@ -9,13 +9,13 @@ module.exports = {
 // create a new board
 //TODO make a create board Logic
 async function create (req, res) {
-    console.log(req.body)
     // board.create and then put in the database
     try {
+        console.log(req.user)
     await BoardModel.create(
         {   name: req.body.name,
             pictures: req.body.pictures,
-            users: req.body.users })
+            user: req.user._id})
 
             res.status(200).json("let's see if this works")
         } catch(err) {
@@ -28,7 +28,10 @@ async function create (req, res) {
 
 async function boardIndex(req, res) {
     try {
-        let board = await BoardModel.find().populate('name').exec()
+        console.log("WE HATE REACT")
+        let board = await BoardModel.find({user: req.user._id}).populate().exec()
+        console.log("ONLY ALEX LOVES REACT :P")
+        console.log(board)
         res.status(200).json(board)
     } catch(err) {
         res.status(400).json(err);
@@ -37,3 +40,4 @@ async function boardIndex(req, res) {
  
 //TODO make a fetch request to bring the board to us 
 
+// config auth js takes the token 
