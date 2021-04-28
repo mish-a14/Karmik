@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import "./App.css";
 import AuthPage from "../AuthPage/AuthPage";
 import { Route, Switch, Redirect } from "react-router-dom";
-import HomePage from '../HomePage/HomePage';
-import BoardPage from '../BoardPage/BoardPage';
-import LoginPage from '../Login/LoginPage';
-import SignupPage from '../Signup/SignupPage'
-import Picture from '../../components/Picture/Picture.jsx'
-import Logout from '../../components/Logout/Logout'
-import BoardForm from '../../components/BoardForm/BoardForm'
+import HomePage from "../HomePage/HomePage";
+import BoardPage from "../BoardPage/BoardPage";
+import LoginPage from "../Login/LoginPage";
+import SignupPage from "../Signup/SignupPage";
+import Picture from "../../components/Picture/Picture.jsx";
+import Logout from "../../components/Logout/Logout";
+import BoardForm from "../../components/BoardForm/BoardForm";
 // import ImageUploader from 'react-images-upload';
 
 class App extends Component {
@@ -17,8 +17,8 @@ class App extends Component {
   };
 
   setUserBackToNull = () => {
-    this.setState({user: null})
-  }
+    this.setState({ user: null });
+  };
 
   setUserInState = userDoc => {
     this.setState({ user: userDoc });
@@ -34,40 +34,53 @@ class App extends Component {
   }
 
   render() {
-    return(
+    return (
       <div className="App">
-        
-          <Switch>
-            {/* <BoardForm/>*/}
-            {/* <Images />  */}
-            <Route path='/picture' render={(props) => (
-              <Picture {...props} user= {this.state.user}/>
-            )}/>
+        <Switch>
+          {/* <BoardForm/>*/}
+          {/* <Images />  */}
+          <Route
+            path="/picture"
+            render={props => <Picture {...props} user={this.state.user} />}
+          />
 
-            <Route path='/boardform' render={(props) => (
-              <BoardForm {...props} user= {this.state.user}/>
-            )}/>
-            
-            <Route path='/home' render={(props) => (
-              <HomePage {...props}/> 
-            )}/>
+          <Route
+            path="/boardform"
+            render={props => <BoardForm {...props} user={this.state.user} />}
+          />
 
-            <Route path='/board' render={(props) => (
-              <BoardPage setUserBackToNull={this.setUserBackToNull} {...props}/>
-            )}/>
-            <Route path='/auth' render={(props) => (
-              <AuthPage setUserInState={this.setUserInState} {...props}/>
-            )}/>
-            <Route path='/login' render={(props) => (
-              <LoginPage setUserInState={this.setUserInState} {...props}/>
-            )}/>
-            <Route path='/signup' render={(props) => (
-              <SignupPage setUserInState={this.setUserInState} {...props}/>
-              
-            )}/>
-            
-            <Redirect to='/home' />
-          </Switch>
+          <Route path="/home" render={props => <HomePage {...props} />} />
+
+          <Route
+            path="/board"
+            render={props => (
+              <BoardPage
+                setUserBackToNull={this.setUserBackToNull}
+                {...props}
+              />
+            )}
+          />
+          <Route
+            path="/auth"
+            render={props => (
+              <AuthPage setUserInState={this.setUserInState} {...props} />
+            )}
+          />
+          <Route
+            path="/login"
+            render={props => (
+              <LoginPage setUserInState={this.setUserInState} {...props} />
+            )}
+          />
+          <Route
+            path="/signup"
+            render={props => (
+              <SignupPage setUserInState={this.setUserInState} {...props} />
+            )}
+          />
+
+          <Redirect to="/home" />
+        </Switch>
       </div>
     );
   }
