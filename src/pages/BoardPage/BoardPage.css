@@ -30,3 +30,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.links button {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  background-color: #d8caaf;
+  outline: none;
+  border: none;
+}
