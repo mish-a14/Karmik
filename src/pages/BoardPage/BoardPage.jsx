@@ -5,21 +5,20 @@ import './BoardPage.css'
 import Logout from '../../components/Logout/Logout'
 
 class BoardPage extends React.Component {
-    
-    
     state = {
-        myBoards: [],
-        // user: null
+        board: [],
     }
     // const history = useHistory();
-    
 
     async componentDidMount() {
         try {
             let jwt = localStorage.getItem('token')
-            let fetchBoardsResponse = await fetch('api/users/', {headers: {'Authorization': 'Bearer ' + jwt}})
-            let boards = await fetchBoardsResponse.json();
-            this.setState({myBoards: boards})
+            let fetchBoardResponse = await fetch('/api/board/', 
+            {headers: {'Authorization': 'Bearer ' + jwt}})
+            let boardObjects = await fetchBoardResponse.json();
+            let boardStrings = boardObjects.map(b => b)
+            this.setState({ board: boardStrings})
+            console.log(boardStrings)
         } catch (err) {
             console.error('ERROR:', err)
         }
@@ -37,7 +36,7 @@ class BoardPage extends React.Component {
                     <Logout setUserBackToNull={this.props.setUserBackToNull} {...this.props}/>              
                 </div>
             </nav>
-            <Board myBoards={this.state.myBoards} />
+            <Board board={this.state.board}/>
         </div>
     )
     }
