@@ -11,7 +11,6 @@ import Logout from '../../components/Logout/Logout'
 import BoardForm from '../../components/BoardForm/BoardForm'
 // import ImageUploader from 'react-images-upload';
 
-
 class App extends Component {
   state = {
     user: null
@@ -39,8 +38,8 @@ class App extends Component {
       <div className="App">
         
           <Switch>
-            {/* <BoardForm/><Picture /> */}
-
+            {/* <BoardForm/>*/}
+            {/* <Images />  */}
             <Route path='/picture' render={(props) => (
               <Picture {...props} user= {this.state.user}/>
             )}/>

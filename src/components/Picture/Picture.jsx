@@ -8,7 +8,7 @@
 //             File Upload URL: 
 //             <input id="urlInput" type='text' onChange={props.onURLChange} value={props.url} />
 //         </label>
-//         {/* <ImageUploader
+//         <ImageUploader
 //             key='image-uploader'
 //             withIcon={true}
 //             singleImage={true}
@@ -17,7 +17,7 @@
 //             buttonText="Choose an Image"
 //             onChange={props.onImage}
 //             imgExtension={['.jpg', '.png', '.jpeg']}
-//             maxFileSize={5242880}></ImageUploader> */}
+//             maxFileSize={5242880}></ImageUploader>
 //     </form>
 // );
 
@@ -109,7 +109,7 @@ class Images extends Component {
 
     render() {
     return(
-            <div>Image Uploader Testing
+            <div>Image Uploader 
             {/* {content()} */}
             name ?<input name="name" value={this.state.name} onChange={this.handleChange} />
             URL?<input name="url" value={this.state.url} onChange={this.handleChange} />
@@ -117,8 +117,7 @@ class Images extends Component {
             {this.handleOnClick(evt)}}>Add Image</button>
             </div>
     );
-    }
-    
+    } 
 }
 
 export default Images;
