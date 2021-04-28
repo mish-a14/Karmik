@@ -1,11 +1,11 @@
 // import React, {Component, useState, onURLChange} from 'react';
 // import ImageUploader from 'react-images-upload';
-// import Axios from 'axios'; 
+// import Axios from 'axios';
 
 // const UploadComponent = props => (
 //     <form>
 //         <label>
-//             File Upload URL: 
+//             File Upload URL:
 //             <input id="urlInput" type='text' onChange={props.onURLChange} value={props.url} />
 //         </label>
 //         <ImageUploader
@@ -40,18 +40,18 @@
 //     setProgress('uploading')
 
 //     try {
-//         console.log('successImages', successImages); 
+//         console.log('successImages', successImages);
 //         const parts = successImages[0].split(';')
 //         const mime = parts[0].split(":")[1];
 //         const name = parts[1].split('=')[1];
 //         const data = parts[2];
-//         const res = await Axios.post(url, {mime, name, image: data}); 
+//         const res = await Axios.post(url, {mime, name, image: data});
 
 //         setImageURL(res.data.imageURL)
 //         setProgress( 'uploaded' )
 //     } catch (error) {
-//         console.log('error in upload', error); 
-//         setErrorMessage(error.message); 
+//         console.log('error in upload', error);
+//         setErrorMessage(error.message);
 //         setProgress('uploadError');
 //     }
 // }
@@ -60,7 +60,7 @@
 //         switch(progress) {
 //             case 'getUpload':
 //                 return <UploadComponent onURLChange={onURLChange} onImage={onImage} url={url} />
-//             case 'uploading': 
+//             case 'uploading':
 //                 return <h2>Uploading...</h2>
 //             case 'uploaded':
 //                 return <img src={url} alt='uploaded' />
@@ -74,50 +74,62 @@
 //         }
 //     }
 
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Images extends Component {
-    state= {
-        name: "",
-        url: ""
+  state = {
+    name: "",
+    url: ""
+  };
+
+  handleChange = evt => {
+    this.setState({ [evt.target.name]: evt.target.value });
+  };
+
+  handleOnClick = async evt => {
+    evt.preventDefault();
+    try {
+      let fetchResponse = await fetch("/api/picture", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: this.state.name,
+          board: "6088632bdcf2a6c3e143aecf",
+          url: this.state.url
+        })
+      });
+      let serverResponse = await fetchResponse.json();
+      console.log("Success:", serverResponse);
+      alert(serverResponse);
+      this.setState({ name: "" });
+    } catch (err) {
+      console.error("Error:", err);
     }
+  };
 
-    handleChange = (evt) => {
-        this.setState({ [evt.target.name] : evt.target.value})
-    }
-
-    handleOnClick = async (evt) => {
-        evt.preventDefault()
-        try {
-            let fetchResponse = await fetch("/api/picture", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(
-                    {name: this.state.name,
-                     board: "6088632bdcf2a6c3e143aecf", 
-                     url: this.state.url })
-            })
-            let serverResponse = await fetchResponse.json()
-            console.log("Success:", serverResponse)
-            alert(serverResponse)
-            this.setState({ name: "" })
-         } catch (err) {
-            console.error("Error:", err)
-            }
-        };
-
-
-    render() {
-    return(
-            <div>Image Uploader 
-            {/* {content()} */}
-            name ?<input name="name" value={this.state.name} onChange={this.handleChange} />
-            URL?<input name="url" value={this.state.url} onChange={this.handleChange} />
-            <button onClick = {(evt) => 
-            {this.handleOnClick(evt)}}>Add Image</button>
-            </div>
+  render() {
+    return (
+      <div>
+        Image Uploader
+        {/* {content()} */}
+        name ?
+        <input
+          name="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+        />
+        URL?
+        <input name="url" value={this.state.url} onChange={this.handleChange} />
+        <button
+          onClick={evt => {
+            this.handleOnClick(evt);
+          }}
+        >
+          Add Image
+        </button>
+      </div>
     );
-    } 
+  }
 }
 
 export default Images;

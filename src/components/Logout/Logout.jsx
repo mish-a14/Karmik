@@ -1,22 +1,18 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
+function Logout(props) {
+  let LogoutButton = () => {
+    localStorage.clear("token");
+    props.setUserBackToNull();
+    props.history.push("/home");
+  };
 
-
-
-function Logout(props){
-
-    let LogoutButton = () => {
-        localStorage.clear("token")
-        props.setUserBackToNull()
-        props.history.push('/home')
-    }
-
-return (
+  return (
     <>
-    <button onClick={LogoutButton}>logout</button>
+      <button onClick={LogoutButton}>Logout</button>
     </>
-)
+  );
 }
 
-export default Logout; 
+export default Logout;
