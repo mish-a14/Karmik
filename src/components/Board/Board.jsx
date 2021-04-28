@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
 
+
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -94,17 +95,17 @@ function CustomizedDialogs() {
     );
   };
 }
-function Board(props) {
-  let myBoardArray = ["one", "two", "three"];
-  return (
+function Board(props) { 
+    return (
+
     <div className="board">
-      {/* {myBoardArray.map( b => <div> {b} </div>)} */}
+      
 
       <div className="the-boards">
-        {myBoardArray.length > 0 ? (
+        {props.board.length > 0 ? (
           <div className="prev-boards">
             <>
-              myBoardArray;
+            {props.board.map( b => <div> {b.name} <img src={b.pictures}/></div>)}
               <div className="btn-div">
                 <button>
                   <Link to="/boardform">+</Link>
@@ -125,7 +126,7 @@ function Board(props) {
           </div>
         )}
         <div className="showcase">
-          {myBoardArray.length > 0 ? (
+          {props.board.length > 0 ? (
             <>
               myBoardArray[0]
               <div className="btn-div">
