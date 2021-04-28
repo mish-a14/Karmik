@@ -1,7 +1,8 @@
 const BoardModel = require('../models/board.js');
 
 module.exports = {
-    create
+    create, 
+    boardIndex,
 }
 // we want the board to be added to the DataBase
 
@@ -25,5 +26,14 @@ async function create (req, res) {
 
 // fetch one of the boards
 
+async function boardIndex(req, res) {
+    try {
+        let board = await BoardModel.find().populate('name').exec()
+        res.status(200).json(board)
+    } catch(err) {
+        res.status(400).json(err);
+    }
+}
+ 
 //TODO make a fetch request to bring the board to us 
 

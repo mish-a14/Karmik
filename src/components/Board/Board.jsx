@@ -89,16 +89,16 @@ const styles = (theme) => ({
   } 
 function Board(props) {
 
-    let myBoardsArray = props.myBoards.map( b => 
-        <Board Board={b} />)
+    let myUserArray = props.user.map( u => 
+        <Board Board={u} />)
 
     return (
         <div className="board">
                     <div className="the-boards">
-            {myBoardsArray.length > 0 ? 
+            {myUserArray.length > 0 ? 
             <div className="prev-boards">
             <>
-            myBoardsArray;
+            myUserArray;
             <div className="btn-div">
             <button>+</button>
             </div>
@@ -115,9 +115,9 @@ function Board(props) {
             </div>   
         }
         <div className="showcase">
-            {myBoardsArray.length > 0 ?
+            {myUserArray.length > 0 ?
             <>
-            myBoardsArray[0] 
+            myUserArray[0] 
             
             <div className="btn-div">
             <button onClick = {(evt) => 

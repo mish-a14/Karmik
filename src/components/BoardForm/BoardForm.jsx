@@ -7,6 +7,8 @@ class BoardForm extends Component {
         name: "", 
         pictures: ""
     }
+
+
     handleChange = (evt) => {
         this.setState({ [evt.target.name] : evt.target.value})
     }

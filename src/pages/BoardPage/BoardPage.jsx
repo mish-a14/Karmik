@@ -8,18 +8,22 @@ class BoardPage extends React.Component {
     
     
     state = {
-        myBoards: [],
-        // user: null
+        user: [],
+        board: []
     }
     // const history = useHistory();
-    
 
     async componentDidMount() {
         try {
             let jwt = localStorage.getItem('token')
-            let fetchBoardsResponse = await fetch('api/users/', {headers: {'Authorization': 'Bearer ' + jwt}})
-            let boards = await fetchBoardsResponse.json();
-            this.setState({myBoards: boards})
+            let fetchUserResponse = await fetch('api/users/', {headers: {'Authorization': 'Bearer ' + jwt}})
+            let fetchBoardResponse = await fetch('/api/board')
+            let user = await fetchUserResponse.json();
+            let boardObjects = await fetchBoardResponse.json();
+            let boardStrings = boardObjects.map(b => b.name)
+            this.setState({ user: user, board: boardStrings})
+            // let board = await fetchBoardResponse.json();
+            // this.setState({user: user, board: board})
         } catch (err) {
             console.error('ERROR:', err)
         }
@@ -37,7 +41,7 @@ class BoardPage extends React.Component {
                     <Logout setUserBackToNull={this.props.setUserBackToNull} {...this.props}/>              
                 </div>
             </nav>
-            <Board myBoards={this.state.myBoards} />
+            <Board user={this.state.user} />
         </div>
     )
     }
