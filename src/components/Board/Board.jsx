@@ -102,7 +102,7 @@ let myBoardArray= ['one', 'two', 'three'];
             <>
             myBoardArray;
             <div className="btn-div">
-            <button>+</button>
+            <button><Link to="/boardform">+</Link></button>
             </div>
             </>
             </div>

@@ -45,7 +45,7 @@ class App extends Component {
             )}/>
 
             <Route path='/boardform' render={(props) => (
-              <BoardForm {...props} user= {this.state.user}/>
+              <BoardForm {...props} user={this.state.user} />
             )}/>
             
             <Route path='/home' render={(props) => (
