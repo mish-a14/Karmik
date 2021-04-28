@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Picture from '../Picture/Picture.jsx'
+import './BoardForm.css'
 
 class BoardForm extends Component {
     state= {
@@ -31,14 +32,21 @@ class BoardForm extends Component {
 
     render() {
         return(
-
+            <>
+            <nav>
+                <Link to='/board'>go back to boards</Link>
+            </nav>
+            <div className="board-form">
             <form>
-            Board Name: <input name="name" value={this.state.name} onChange={this.handleChange} />
-            Add Pictures: <input name="pictures" value={this.state.pictures} onChange={this.handleChange}/>
+                <div className="form">
+            Board Name : <input name="name" value={this.state.name} onChange={this.handleChange} />
+            Add Picture? : <input name="pictures" value={this.state.pictures} onChange={this.handleChange}/>
             <button onClick = {(evt) => 
             {this.handleOnClick(evt)}}>Add Board</button>
+            </div>
             </form> 
-            
+            </div>
+            </>
     ) 
     }
 }
