@@ -133,6 +133,12 @@ class Board extends React.Component {
     })
     };
 
+  handleEdit = () => {
+    this.setState({
+      userIsEdit: true,
+    })
+  }
+
   render() {
     return (
       <div className="board">
@@ -148,7 +154,11 @@ class Board extends React.Component {
                     <button onClick={() => this.showBoard(b.name, b.pictures)}>
                         <img src="https://i.imgur.com/5WSHwlI.png" />
                       </button>
-                      <button>
+                      <button
+                     onClick={() => {
+                       this.handleEdit();
+                     }}
+                   >
                         <img src="https://i.imgur.com/rd5PUNr.png" />
                       </button>
                       <button
