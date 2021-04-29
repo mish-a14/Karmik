@@ -38,15 +38,13 @@ Karmik gives you the freedom to create a board for every intention you desire to
 ![Logo](https://i.imgur.com/IICvEAJ.png)
 
 
-![Logo](https://i.imgur.com/cy5DS6n.png)
-
-
 ![Logo](https://i.imgur.com/ZWQejYS.png)
 
 
 ![Logo](https://i.imgur.com/4bbfRJj.png)
 
-
+<h2>Mobile</h2>
+![Logo](https://i.imgur.com/cy5DS6n.png)
 
 
 **Future goals:**
