@@ -37,7 +37,7 @@ Karmik gives you the freedom to create a board for every intention you desire to
 
 </p>
 
-**<h1>SNAPSHOTS</h1>**
+**<h1 align="center">SNAPSHOTS</h1>**
 
 ![Logo](https://i.imgur.com/IICvEAJ.png)
 
