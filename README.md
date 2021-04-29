@@ -1,5 +1,6 @@
+<p align="center">
 <h1>KARMIK</h1>
-
+</p>
 
 ![Logo](https://i.imgur.com/dSBMO79.png)
 
