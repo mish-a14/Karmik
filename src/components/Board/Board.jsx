@@ -104,7 +104,8 @@ class Board extends React.Component {
   state = {
     name: "",
     pictures: [],
-    userIsEdit: false
+    userIsEdit: false,
+    user: ""
   };
 
   render() {
@@ -118,6 +119,7 @@ class Board extends React.Component {
                   <div className="panel">
                     {" "}
                     {b.name} <img src={b.pictures} />{" "}
+                    {b._id}
                     <div className="btns">
                       <button onClick={showBoard}>
                         <img src="https://i.imgur.com/5WSHwlI.png" />
@@ -153,7 +155,7 @@ class Board extends React.Component {
             </div>
           )}
           {this.state.userIsEdit ? (
-            <EditBoard state={this.state} />
+            <EditBoard name={this.state.name} pictures={this.state.pictures} id={this.state._id}/>
           ) : (
             <Showcase />
           )}
