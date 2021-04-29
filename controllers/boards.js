@@ -45,7 +45,7 @@ async function boardIndex(req, res) {
 async function boardModify(req, res) {
   try {
     console.log(req.body.board);
-    let board = await BoardModel.find({ board: req.body.board });
+    let board = await BoardModel.updateOne({ board: req.body.board });
   } catch (e) {
   } finally {
     alert("Finished the boardModify function");
@@ -57,7 +57,7 @@ async function boardModify(req, res) {
 
 async function boardDelete(req, res) {
   try {
-    let board = await BoardModel.find({ board: req.body.board });
+    let board = await BoardModel.deleteOne({ board: req.body.board });
   } catch (e) {
   } finally {
     alert("Finished the boardDelete function");
