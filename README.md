@@ -14,20 +14,20 @@ Searching for a job?
 Karmik gives you the freedom to create a board for each event that you want to manifest and achieve.  
 
 Technologies used: 
-<li>
-Mongo.js
-Express.js
-React.js
-Node.js
-Material UI
-</li>
+
+<li>Mongo.js</li>
+<li>Express.js</li>
+<li>React.js</li>
+<li>Node.js</li>
+<li>Material UI</li>
+
 
 Languages:
-JavaScript 
-HTML 
-CSS
+<li>JavaScript</li>
+<li>HTML</li>
+<li>CSS</li>
 
-Future goals: 
+###Future goals:###
 
-We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their boards. 
-Improve UX component and implement animations for the boards 
+<li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their boards</li>
+<li>Improve UX component and implement animations for the boards</li>
