@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
-import Showcase from '../Showcase/Showcase';
-import EditBoard from '../EditBoard/EditBoard';
+import Showcase from "../Showcase/Showcase";
+import EditBoard from "../EditBoard/EditBoard";
 import "./Board.css";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -59,8 +59,6 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
-
-
 function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
 
@@ -100,69 +98,71 @@ function CustomizedDialogs() {
   };
 }
 
-const showBoard = async e => {
-
-};
+const showBoard = async e => {};
 
 class Board extends React.Component {
-
   state = {
-      name: "",
-      pictures: [],
-      userIsEdit: false
-  }
+    name: "",
+    pictures: [],
+    userIsEdit: false,
+    user: ""
+  };
 
   render() {
-  return (
-    <div className="board">
-      <div className="the-boards">
-        {this.props.board.length > 0 ? (
-          <div className="prev-boards">
-            <>
-              {this.props.board.map(b => (
-                <div className="panel">
-                  {" "}
-                  {b.name} <img src={b.pictures} />{" "}
-                  <div className="btns">
-                    <button onClick={showBoard}>
-                      <img src="https://i.imgur.com/5WSHwlI.png" />
-                    </button>
-                    <button>
-                      <img src="https://i.imgur.com/5WSHwlI.png" />
-                    </button>
-                    <button>
-                      <img src="https://i.imgur.com/XXoPWe5.png" />
-                    </button>
+    return (
+      <div className="board">
+        <div className="the-boards">
+          {this.props.board.length > 0 ? (
+            <div className="prev-boards">
+              <>
+                {this.props.board.map(b => (
+                  <div className="panel">
+                    {" "}
+                    {b.name} <img src={b.pictures} />{" "}
+                    {b._id}
+                    <div className="btns">
+                      <button onClick={showBoard}>
+                        <img src="https://i.imgur.com/5WSHwlI.png" />
+                      </button>
+                      <button>
+                        <img src="https://i.imgur.com/5WSHwlI.png" />
+                      </button>
+                      <button>
+                        <img src="https://i.imgur.com/XXoPWe5.png" />
+                      </button>
+                    </div>
                   </div>
+                ))}
+                <div className="btn-div">
+                  <p>Add New</p>
+                  <button>
+                    <Link to="/boardform">+</Link>
+                  </button>
                 </div>
-              ))}
-              <div className="btn-div">
-                <p>Add New</p>
-                <button>
-                  <Link to="/boardform">+</Link>
-                </button>
-              </div>
-            </>
-          </div>
-        ) : (
-          <div className="prev-boards">
-            <>
-              <p className="no-boards">hmm...no vision boards yet!</p>
-              <div className="btn-div">
-                <p>Add New</p>
-                <button className="panel-btn">
-                  <Link to="/boardform">+</Link>
-                </button>
-              </div>
-            </>
-          </div>
-        )}
-        {this.state.userIsEdit ?<EditBoard /> : <Showcase />}
-
+              </>
+            </div>
+          ) : (
+            <div className="prev-boards">
+              <>
+                <p className="no-boards">hmm...no vision boards yet!</p>
+                <div className="btn-div">
+                  <p>Add New</p>
+                  <button className="panel-btn">
+                    <Link to="/boardform">+</Link>
+                  </button>
+                </div>
+              </>
+            </div>
+          )}
+          {this.state.userIsEdit ? (
+            <EditBoard name={this.state.name} pictures={this.state.pictures} id={this.state._id}/>
+          ) : (
+            <Showcase />
+          )}
+        </div>
       </div>
-    </div>
-  );
-        }
+    );
+  }
 }
 
 export default Board;

@@ -62,42 +62,45 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
-const handleOnModify = async evt => {
-  evt.preventDefault();
-  try {
-    console.log("inside the try");
-    let jwt = localStorage.getItem("token");
-
-    let fetchResponse = await fetch("/api/board/change", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + jwt
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        pictures: this.state.pictures
-      })
-    });
-
-    let serverResponse = await fetchResponse.json();
-    console.log("Success:", serverResponse);
-    console.log(serverResponse);
-    this.setState({ name: "" });
-  } catch (err) {
-    console.error("Error:", err);
-  }
-};
 
 class EditBoard extends React.Component {
   state = {
     name: "",
     pictures: []
+    //passs in props as state 
   };
 
   handleChange = evt => {
     console.log(evt);
     this.setState({ [evt.target.name]: evt.target.value });
+  };
+
+  handleOnModify = async evt => {
+    evt.preventDefault();
+    console.log(this.state.name)
+    console.log(this.state.pictures)
+    try {
+      let jwt = localStorage.getItem("token");
+      let fetchResponse = await fetch("/api/board/change", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + jwt
+        },
+        body: JSON.stringify({
+          id: this.state.id,
+          name: this.state.name,
+          pictures: this.state.pictures
+        })
+      });
+      console.log("inside the try");
+      let serverResponse = await fetchResponse.json();
+      console.log("Success:", serverResponse);
+      console.log(serverResponse);
+      this.setState({ name: "" });
+    } catch (err) {
+      console.error("Error:", err);
+    }
   };
 
   render() {
@@ -106,18 +109,18 @@ class EditBoard extends React.Component {
         Please enter Name :{" "}
         <input
           name="name"
-          value={this.state.name}
+          value={this.props.name}
           onChange={this.handleChange}
         ></input>
         change pictures:{" "}
         <input
           name="pictures"
-          value={this.state.pictures}
+          value={this.props.pictures}
           onChange={this.handleChange}
         ></input>
         <button
           onClick={evt => {
-            handleOnModify(evt);
+            this.handleOnModify(evt);
           }}
         >
           <img src="https://i.imgur.com/5WSHwlI.png" />
