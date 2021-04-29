@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
 import Showcase from '../Showcase/Showcase';
+import EditBoard from '../EditBoard/EditBoard';
 import "./Board.css";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -58,31 +59,7 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
-const handleOnModify = async evt => {
-  evt.preventDefault();
-  try {
-    console.log();
-    let jwt = localStorage.getItem("token");
-    let fetchResponse = await fetch("/api/board/change", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + jwt
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        pictures: this.state.pictures
-      })
-    });
-    console.log("inside the try");
-    let serverResponse = await fetchResponse.json();
-    console.log("Success:", serverResponse);
-    console.log(serverResponse);
-    this.setState({ name: "" });
-  } catch (err) {
-    console.error("Error:", err);
-  }
-};
+
 
 function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
@@ -130,10 +107,9 @@ const showBoard = async e => {
 class Board extends React.Component {
 
   state = {
-    display: {
       name: "",
-      pictures: []
-    }
+      pictures: [],
+      userIsEdit: false
   }
 
   render() {
@@ -151,11 +127,7 @@ class Board extends React.Component {
                     <button onClick={showBoard}>
                       <img src="https://i.imgur.com/5WSHwlI.png" />
                     </button>
-                    <button
-                      onClick={evt => {
-                        handleOnModify(evt);
-                      }}
-                    >
+                    <button>
                       <img src="https://i.imgur.com/5WSHwlI.png" />
                     </button>
                     <button>
@@ -185,7 +157,8 @@ class Board extends React.Component {
             </>
           </div>
         )}
-      <Showcase />
+        {this.state.userIsEdit ?<EditBoard /> : <Showcase />}
+
       </div>
     </div>
   );
