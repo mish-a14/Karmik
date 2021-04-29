@@ -14,60 +14,11 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const styles = theme => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(2)
-  },
-  closeButton: {
-    position: "absolute",
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.grey[500]
-  }
-});
-
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const DialogTitle = withStyles(styles)(props => {
-  const { children, classes, onClose, ...other } = props;
-  return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
-      {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </MuiDialogTitle>
-  );
-});
-
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const DialogContent = withStyles(theme => ({
-  root: {
-    padding: theme.spacing(2)
-  }
-}))(MuiDialogContent);
-
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const DialogActions = withStyles(theme => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1)
-  }
-}))(MuiDialogActions);
-
 
 class EditBoard extends React.Component {
   state = {
     name: "",
-    pictures: []
-    //passs in props as state 
+    pictures: "",
   };
 
   handleChange = evt => {
@@ -88,7 +39,7 @@ class EditBoard extends React.Component {
           Authorization: "Bearer " + jwt
         },
         body: JSON.stringify({
-          id: this.state.id,
+          id: this.state._id,
           name: this.state.name,
           pictures: this.state.pictures
         })
@@ -109,15 +60,15 @@ class EditBoard extends React.Component {
         Please enter Name :{" "}
         <input
           name="name"
-          value={this.props.name}
+          value={this.state.name}
           onChange={this.handleChange}
-        ></input>
+        />
         change pictures:{" "}
         <input
           name="pictures"
-          value={this.props.pictures}
+          value={this.state.pictures}
           onChange={this.handleChange}
-        ></input>
+        />
         <button
           onClick={evt => {
             this.handleOnModify(evt);

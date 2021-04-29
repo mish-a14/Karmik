@@ -45,10 +45,11 @@ async function boardModify(req, res) {
   try {
     console.log(req.body);
     let board = await BoardModel.findOneAndUpdate({ board: req.body.board });
+    console.log(board)
+    res.status(200).json(board);
   } catch (e) {
     res.status(400).json(e);
-  } finally {
-    console.log("Finished the boardModify function");
+    console.log("I AM AN ERROR", e)
   }
 }
 

@@ -103,8 +103,8 @@ const showBoard = async e => {};
 class Board extends React.Component {
   state = {
     name: "",
-    pictures: [],
-    userIsEdit: false,
+    pictures: "",
+    userIsEdit: true,
     user: ""
   };
 
