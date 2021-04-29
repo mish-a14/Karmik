@@ -1,6 +1,8 @@
 <h1>KARMIK</h1>
 
+<p align="center">
 ![Logo](https://i.imgur.com/dSBMO79.png)
+</p>
 
 <h2>Vision Board Redefined.</h2>
 
@@ -43,6 +45,23 @@ Karmik gives you the freedom to create a board for every intention you desire to
 **Languages:**
 <li>JavaScript</li>
 <br />
+
+
+**<h1>SNAPSHOTS</h1>**
+<p align="center">
+![Logo](https://i.imgur.com/IICvEAJ.png)
+</p>
+<p align="center">
+![Logo](https://i.imgur.com/cy5DS6n.png)
+</p>
+<p align="center">
+![Logo](https://i.imgur.com/ZWQejYS.png)
+</p>
+<p align="center">
+![Logo](https://i.imgur.com/4bbfRJj.png)
+</p>
+
+
 
 **Future goals:**
 
