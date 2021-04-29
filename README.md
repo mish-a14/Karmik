@@ -1,7 +1,5 @@
 <h1>KARMIK</h1>
 
-<img src="karmik.png" />
-
 ![Logo](https://i.imgur.com/dSBMO79.png)
 
 <h2>Vision Board Redefined.</h2>
