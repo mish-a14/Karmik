@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
+import './Board.css';
 
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -139,6 +140,7 @@ function Board(props) {
                 </div>
               ))}
               <div className="btn-div">
+              <p>Add New</p>
                 <button>
                   <Link to="/boardform">+</Link>
                 </button>
@@ -150,7 +152,8 @@ function Board(props) {
             <>
               <p className="no-boards">hmm...no vision boards yet!</p>
               <div className="btn-div">
-                <button>
+                <p>Add New</p>
+                <button className="panel-btn">
                   <Link to="/boardform">+</Link>
                 </button>
               </div>
@@ -166,9 +169,9 @@ function Board(props) {
                   onClick={evt => {
                     this.handleOnClick(evt);
                   }}
-                >
+                ><Link to='/board'>
                   +
-                </button>
+                  </Link></button>
               </div>
             </>
           ) : (
