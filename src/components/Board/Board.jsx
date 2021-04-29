@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
 
-
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -67,6 +66,30 @@ function CustomizedDialogs() {
     setOpen(false);
   };
 
+  const handleOnModify = async evt => {
+    evt.preventDefault();
+    try {
+      let jwt = localStorage.getItem("token");
+      let fetchResponse = await fetch("/api/board/change", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + jwt
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          pictures: this.state.pictures
+        })
+      });
+      let serverResponse = await fetchResponse.json();
+      console.log("Success:", serverResponse);
+      console.log(serverResponse);
+      this.setState({ name: "" });
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  };
+
   const handleOnClick = async evt => {
     evt.preventDefault();
     return (
@@ -95,17 +118,26 @@ function CustomizedDialogs() {
     );
   };
 }
-function Board(props) { 
-    return (
-
+function Board(props) {
+  return (
     <div className="board">
-      
-
       <div className="the-boards">
         {props.board.length > 0 ? (
           <div className="prev-boards">
             <>
-            {props.board.map( b => <div> {b.name} <img src={b.pictures}/></div>)}
+              {props.board.map(b => (
+                <div>
+                  {" "}
+                  {b.name} <img src={b.pictures} />{" "}
+                  <button
+                    onClick={evt => {
+                      this.handleOnModify(evt);
+                    }}
+                  >
+                    Delete board
+                  </button>
+                </div>
+              ))}
               <div className="btn-div">
                 <button>
                   <Link to="/boardform">+</Link>
