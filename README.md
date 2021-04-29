@@ -20,7 +20,7 @@ This is why we have created Karmik, a digital answer to the traditional Vision B
 >Thinking of buying your dream home? <br />
 >Searching for a job? 
 
-Karmik gives you the freedom to create a board for every intention you desire to manifest.  
+Karmik gives you the freedom to create a board for every intention you desire to manifest.<br />
 
 <p align="center">
 
