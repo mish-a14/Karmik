@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
+import Showcase from '../Showcase/Showcase';
 import "./Board.css";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -121,22 +122,31 @@ function CustomizedDialogs() {
 }
 
 const showBoard = async e => {
-  let display = await fetch("api/boards");
+  
 };
 
-function Board(props) {
+class Board extends React.Component {
+
+  state = {
+    display: {
+      name: "",
+      pictures: []
+    }
+  }
+
+  render() {
   return (
     <div className="board">
       <div className="the-boards">
-        {props.board.length > 0 ? (
+        {this.props.board.length > 0 ? (
           <div className="prev-boards">
             <>
-              {props.board.map(b => (
+              {this.props.board.map(b => (
                 <div className="panel">
                   {" "}
                   {b.name} <img src={b.pictures} />{" "}
                   <div className="btns">
-                    <button>
+                    <button onClick={showBoard}>
                       <img src="https://i.imgur.com/5WSHwlI.png" />
                     </button>
                     <button
@@ -170,35 +180,11 @@ function Board(props) {
             </>
           </div>
         )}
-        <div className="showcase">
-          {props.board.length > 0 ? (
-            <>
-              myBoardArray[0]
-              <div className="btn-div">
-                <button
-                  onClick={evt => {
-                    this.handleOnClick(evt);
-                  }}
-                >
-                  <Link to="/board">+</Link>
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <p>
-                looking to get started? popular board topics include: career,
-                travel, and lifestyle.
-              </p>
-              <div className="btn-div">
-                <button>+</button>
-              </div>
-            </>
-          )}
-        </div>
+      <Showcase />
       </div>
     </div>
   );
+        }
 }
 
 export default Board;
