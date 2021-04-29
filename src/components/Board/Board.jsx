@@ -137,6 +137,25 @@ class Board extends React.Component {
   })
   };
 
+  handleDelete = async board => {
+    try {
+      let jwt = localStorage.getItem("token");
+      let deleted = await fetch("/api/board/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + jwt
+        },
+        body: JSON.stringify({
+          board: board
+        })
+      });
+      console.log("processed to the end")
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  }
+
   render() {
   return (
     <div className="board">
@@ -153,8 +172,8 @@ class Board extends React.Component {
                       <img src="https://i.imgur.com/5WSHwlI.png" />
                     </button>
                     <button
-                      onClick={evt => {
-                        handleOnModify(evt);
+                      onClick={() => {
+                        this.handleDelete(b._id);
                       }}
                     >
                       <img src="https://i.imgur.com/XXoPWe5.png" />

@@ -45,15 +45,16 @@ class PictureForm extends React.Component {
         <div className="board-form">
           <form>
             <div className="form">
-              Add Picture? :{" "}
+              Add Picture? {" "}
               <input
                 name="url"
                 value={this.state.url}
                 onChange={this.handleChange}
               />
-              <input className="hidden" 
+              To which board?
+              <input 
               name="board"
-            //   value= board props here
+              value={this.state.board}
             onChange={this.handleChange}
             />
               <button

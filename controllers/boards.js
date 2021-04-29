@@ -57,9 +57,10 @@ async function boardModify(req, res) {
 
 async function boardDelete(req, res) {
   try {
-    let board = await BoardModel.deleteOne({ board: req.body.board });
-  } catch (e) {
-  } finally {
-    alert("Finished the boardDelete function");
+    let board = await BoardModel.findByIdAndDelete(req.body.board);
+    res.status(200).json()
+  } catch (err) {
+    console.log("Error", err)
+    res.status(400).json()
   }
 }

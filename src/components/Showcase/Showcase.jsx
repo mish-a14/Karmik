@@ -11,7 +11,9 @@ class Showcase extends React.Component {
     <div className="btn-div">
       <button
       >
-        <Link to="/pictureform" >+</Link>
+        <Link to={{
+          pathname: "/pictureform",
+          state: {name: this.props.name}}} >+</Link>
       </button>
     </div>
 </div>

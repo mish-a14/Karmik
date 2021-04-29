@@ -12,4 +12,6 @@ router.get("/", boardCtrl.boardIndex);
 // POST /api/board/change / modify the board
 router.post("/change", boardCtrl.boardModify);
 
+router.delete("/delete", boardCtrl.boardDelete);
+
 module.exports = router;
