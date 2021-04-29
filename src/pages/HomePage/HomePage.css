@@ -18,7 +18,7 @@ nav .logo {
 }
 
 .home {
-  display: flex;  
+  display: flex;
   min-height: 94vh;
   width: 100%;
 }
@@ -118,25 +118,25 @@ nav .logo {
   border-radius: 20px;
 }
 
-.menu-button{
+.menu-button {
   margin-left: 150px;
 }
 
 @media screen and (max-width: 600px) {
-  .home{
+  .home {
     flex-direction: column;
   }
-  .pic-half{
+  .pic-half {
     width: 80%;
     align-items: center;
     margin: auto;
     order: 1;
   }
-.img2{
-  margin-top: 20px;
-  width: 100%;
-  height: auto;
-}
+  .img2 {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+  }
 
   .text-half {
     width: 80%;
@@ -144,7 +144,7 @@ nav .logo {
     margin: auto;
     order: 2;
   }
-  .text > h2{
+  .text > h2 {
     font-size: 25px;
   }
   .text > p {
