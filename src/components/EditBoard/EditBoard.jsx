@@ -14,60 +14,11 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const styles = theme => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(2)
-  },
-  closeButton: {
-    position: "absolute",
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.grey[500]
-  }
-});
-
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const DialogTitle = withStyles(styles)(props => {
-  const { children, classes, onClose, ...other } = props;
-  return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
-      {onClose ? (
-        <IconButton
-          aria-label="close"
-          className={classes.closeButton}
-          onClick={onClose}
-        >
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </MuiDialogTitle>
-  );
-});
-
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const DialogContent = withStyles(theme => ({
-  root: {
-    padding: theme.spacing(2)
-  }
-}))(MuiDialogContent);
-
-// Not sure what is this doing but Nicole & Vinny knows if it need to be also in the EditBoard comp
-const DialogActions = withStyles(theme => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1)
-  }
-}))(MuiDialogActions);
-
 
 class EditBoard extends React.Component {
   state = {
     name: "",
-    pictures: []
-    //passs in props as state 
+    pictures: "",
   };
 
   handleChange = evt => {
@@ -77,8 +28,6 @@ class EditBoard extends React.Component {
 
   handleOnModify = async evt => {
     evt.preventDefault();
-    console.log(this.state.name)
-    console.log(this.state.pictures)
     try {
       let jwt = localStorage.getItem("token");
       let fetchResponse = await fetch("/api/board/change", {
@@ -88,7 +37,7 @@ class EditBoard extends React.Component {
           Authorization: "Bearer " + jwt
         },
         body: JSON.stringify({
-          id: this.state.id,
+          id: this.props.id,
           name: this.state.name,
           pictures: this.state.pictures
         })
@@ -109,15 +58,17 @@ class EditBoard extends React.Component {
         change word:{" "}
         <input
           name="name"
-          value={this.props.name}
+          placeholder={this.props.name}
+          value={this.state.name}
           onChange={this.handleChange}
-        ></input>
-        change picture:{" "}
+        />
+        change pictures:{" "}
         <input
           name="pictures"
-          value={this.props.pictures}
+          placeholder={this.props.pictures}
+          value={this.state.pictures}
           onChange={this.handleChange}
-        ></input>
+        />
         <button
           onClick={evt => {
             this.handleOnModify(evt);
