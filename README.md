@@ -13,7 +13,7 @@ Searching for a job?
 
 Karmik gives you the freedom to create a board for each event that you want to manifest and achieve.  
 
-#Technologies used:#
+Technologies used:
 
 <li>Mongo.js</li>
 <li>Express.js</li>
