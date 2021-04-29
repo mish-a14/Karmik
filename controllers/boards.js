@@ -13,7 +13,6 @@ module.exports = {
 async function create(req, res) {
   // board.create and then put in the database
   try {
-    console.log(req.user);
     await BoardModel.create({
       name: req.body.name,
       pictures: req.body.pictures,
@@ -44,11 +43,12 @@ async function boardIndex(req, res) {
 // TODO: make modify function for the board
 async function boardModify(req, res) {
   try {
-    console.log(req.body.board);
-    let board = await BoardModel.updateOne({ board: req.body.board });
+    console.log(req.body);
+    let board = await BoardModel.findOneAndUpdate({ board: req.body.board });
   } catch (e) {
+    res.status(400).json(e);
   } finally {
-    alert("Finished the boardModify function");
+    console.log("Finished the boardModify function");
   }
 }
 

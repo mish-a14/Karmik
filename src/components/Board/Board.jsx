@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
-import Showcase from '../Showcase/Showcase';
+import Showcase from "../Showcase/Showcase";
+import EditBoard from "../EditBoard/EditBoard";
 import "./Board.css";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -58,30 +59,6 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
-const handleOnModify = async evt => {
-  evt.preventDefault();
-  try {
-    let jwt = localStorage.getItem("token");
-    let fetchResponse = await fetch("/api/board/change", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + jwt
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        pictures: this.state.pictures
-      })
-    });
-    let serverResponse = await fetchResponse.json();
-    console.log("Success:", serverResponse);
-    console.log(serverResponse);
-    this.setState({ name: "" });
-  } catch (err) {
-    console.error("Error:", err);
-  }
-};
-
 function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
 
@@ -122,19 +99,12 @@ function CustomizedDialogs() {
 }
 
 
-
 class Board extends React.Component {
-
   state = {
-      selectedName: "",
-      selectedPictures: []
-  }
-
-  showBoard = (name, avatar) => {
-  this.setState({
-    selectedName: name,
-    selectedAvatar: avatar
-  })
+    selectedName: "",
+    selectedAvatar: [],
+    userIsEdit: false,
+    user: ""
   };
 
   handleDelete = async board => {
@@ -156,57 +126,70 @@ class Board extends React.Component {
     }
   }
 
+  showBoard = (name, avatar) => {
+    this.setState({
+      selectedName: name,
+      selectedAvatar: avatar
+    })
+    };
+
   render() {
-  return (
-    <div className="board">
-      <div className="the-boards">
-        {this.props.board.length > 0 ? (
-          <div className="prev-boards">
-            <>
-              {this.props.board.map(b => (
-                <div className="panel">
-                  {" "}
-                  {b.name} <img src={b.pictures} />{" "}
-                  <div className="btns">
+    return (
+      <div className="board">
+        <div className="the-boards">
+          {this.props.board.length > 0 ? (
+            <div className="prev-boards">
+              <>
+                {this.props.board.map(b => (
+                  <div className="panel">
+                    {" "}
+                    {b.name} <img src={b.pictures} />
+                    <div className="btns">
                     <button onClick={() => this.showBoard(b.name, b.pictures)}>
-                      <img src="https://i.imgur.com/5WSHwlI.png" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        this.handleDelete(b._id);
-                      }}
-                    >
-                      <img src="https://i.imgur.com/XXoPWe5.png" />
-                    </button>
+                        <img src="https://i.imgur.com/5WSHwlI.png" />
+                      </button>
+                      <button>
+                        <img src="https://i.imgur.com/rd5PUNr.png" />
+                      </button>
+                      <button
+                     onClick={() => {
+                       this.handleDelete(b._id);
+                     }}
+                   >
+                        <img src="https://i.imgur.com/XXoPWe5.png" />
+                      </button>
+                    </div>
                   </div>
+                ))}
+                <div className="btn-div">
+                  <button>
+                    <Link to="/boardform">+</Link>
+                  </button>
                 </div>
-              ))}
-              <div className="btn-div">
-                <p>Add New</p>
-                <button>
-                  <Link to="/boardform">+</Link>
-                </button>
-              </div>
-            </>
-          </div>
-        ) : (
-          <div className="prev-boards">
-            <>
-              <p className="no-boards">hmm...no vision boards yet!</p>
-              <div className="btn-div">
-                <p>Add New</p>
-                <button className="panel-btn">
-                  <Link to="/boardform">+</Link>
-                </button>
-              </div>
-            </>
-          </div>
-        )}
-      <Showcase name={this.state.selectedName} avatar={this.state.selectedAvatar} />
+              </>
+            </div>
+          ) : (
+            <div className="prev-boards">
+              <>
+                <p className="no-boards">hmm...no vision boards yet!</p>
+                <div className="btn-div">
+                  <p>Add New</p>
+                  <button className="panel-btn">
+                    <Link to="/boardform">+</Link>
+                  </button>
+                </div>
+              </>
+            </div>
+          )}
+          {this.state.userIsEdit ? (
+            <EditBoard name={this.state.name} pictures={this.state.pictures} id={this.state._id}/>
+          ) : (
+            <Showcase name={this.state.selectedName} avatar={this.state.selectedAvatar} />
+          )}
+        </div>
       </div>
-    </div>
-  );
-        }
+    );
+  }
 }
 
 export default Board;

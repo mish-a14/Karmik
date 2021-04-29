@@ -1,70 +1,64 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">KARMIK</h1>
 
-## Available Scripts
 
-In the project directory, you can run:
+<p align="center">
+<img src ="https://i.imgur.com/dSBMO79.png" />
+</p>
 
-### `npm start`
+<h2>Vision Board Redefined.</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h3>Visit Karmik</h3>
+LINK BELOW 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Karmik is our first React project that boasts full CRUD functionality and incorporates all of the MERN-stack technologies. 
 
-### `npm test`
+You may have heard from time to time that the best way to achieve your goals is to make a plan, manifest and work hard to achieve it. Vision boards are a powerful tool that gives its creators the ability visualize their intentions and goals using words and pictures to keep thier dreams in sight. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is why we have created Karmik, a digital answer to the traditional Vision Board. Karmik allows users to create multiple boards online for different intentions in life that they can update and delete to thier heart's content. Creators are able to view their boards anywhere on any device and continue to dream big! 
 
-### `npm run build`
+>Thinking of buying your dream home? <br />
+>Searching for a job? 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Karmik gives you the freedom to create a board for every intention you desire to manifest.<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Technologies used:** |    **Languages:**
+-----------------------|--------------------
+ |     MongoDB        |     JavaScript   |
+  |     Express.js      |               |
+  |     React.js        |             |
+   |    Node.js         |              |     
+   |    Mongoose     |                 |  
+ |    React Image UI     |                 |  
+  |    AWS S3    |                 |  
+   |    Material UI     |                 |  
 
-### `npm run eject`
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**<h1 align="center">SNAPSHOTS</h1>**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+<img src="https://i.imgur.com/IICvEAJ.png" />
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="center">
+<img src="https://i.imgur.com/ZWQejYS.png" />
+</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<p align="center">
+<img src="https://i.imgur.com/4bbfRJj.png" />
+</p>
 
-## Learn More
+**<h2 align="center">Mobile View</h2>**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="center">
+<img src="https://i.imgur.com/cy5DS6n.png" />
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Future goals:**
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their    boards</li>
+<li>Improve UX component and implement animations for the boards</li>
+<li>Add reminders for users to visit their boards</li>
