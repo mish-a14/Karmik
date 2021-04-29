@@ -1,4 +1,7 @@
 <h1>KARMIK</h1>
+
+<img src="karmik.png" />
+
 <h2>Vision Board Redefined.</h2>
 
 <h3>Visit Karmik</h3>
