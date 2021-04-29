@@ -30,11 +30,14 @@ Karmik gives you the freedom to create a board for every intention you desire to
 
 **Technologies used:**
 
-<li>Mongo.js</li>
+<li>MongoDB</li>
+<li>Mongoose</li>
 <li>Express.js</li>
 <li>React.js</li>
 <li>Node.js</li>
 <li>Material UI</li>
+<li>React Image UI</li>
+<li>AWS S3</li>
 <br />
 
 **Languages:**
