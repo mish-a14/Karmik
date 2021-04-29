@@ -22,6 +22,8 @@ This is why we have created Karmik, a digital answer to the traditional Vision B
 
 Karmik gives you the freedom to create a board for every intention you desire to manifest.  
 
+<p align="center">
+
 **Technologies used:** |    **Languages:**
 -----------------------|--------------------
  |     MongoDB        |     JavaScript   |
@@ -33,7 +35,7 @@ Karmik gives you the freedom to create a board for every intention you desire to
   |    AWS S3    |                 |  
    |    Material UI     |                 |  
 
-
+</p>
 
 **<h1>SNAPSHOTS</h1>**
 
