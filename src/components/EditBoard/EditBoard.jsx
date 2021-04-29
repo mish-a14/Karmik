@@ -65,7 +65,6 @@ const DialogActions = withStyles(theme => ({
 const handleOnModify = async evt => {
   evt.preventDefault();
   try {
-    console.log("inside the try");
     let jwt = localStorage.getItem("token");
 
     let fetchResponse = await fetch("/api/board/change", {
@@ -79,7 +78,7 @@ const handleOnModify = async evt => {
         pictures: this.state.pictures
       })
     });
-
+    console.log("inside the try");
     let serverResponse = await fetchResponse.json();
     console.log("Success:", serverResponse);
     console.log(serverResponse);
