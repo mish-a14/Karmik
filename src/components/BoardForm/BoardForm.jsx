@@ -47,13 +47,13 @@ class BoardForm extends Component {
         <div className="board-form">
           <form>
             <div className="form">
-              Board Name :{" "}
+              what type of inspo is this? :{" "}
               <input
                 name="name"
                 value={this.state.name}
                 onChange={this.handleChange}
               />
-              Add Picture? :{" "}
+              picture url :{" "}
               <input
                 name="pictures"
                 value={this.state.pictures}
@@ -64,7 +64,7 @@ class BoardForm extends Component {
                   this.handleOnClick(evt);
                 }}
               >
-                <Link to="/board">Add Board</Link>
+                <Link to="/board">add board</Link>
               </button>
             </div>
           </form>
