@@ -39,21 +39,26 @@ Karmik gives you the freedom to create a board for every intention you desire to
 
 **<h1 align="center">SNAPSHOTS</h1>**
 
-![Logo](https://i.imgur.com/IICvEAJ.png)
+<p align="center">
+<img src="https://i.imgur.com/IICvEAJ.png" />
+</p>
 
+<p align="center">
+<img src="https://i.imgur.com/ZWQejYS.png" />
+</p>
 
-![Logo](https://i.imgur.com/ZWQejYS.png)
-
-
-![Logo](https://i.imgur.com/4bbfRJj.png)
+<p align="center">
+<img src="https://i.imgur.com/4bbfRJj.png" />
+</p>
 
 **<h2 align="center">Mobile View</h2>**
 
-![Logo](https://i.imgur.com/cy5DS6n.png)
-
+<p align="center">
+<img src="https://i.imgur.com/cy5DS6n.png" />
+</p>
 
 **Future goals:**
 
-<li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their boards</li>
+<li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their    boards</li>
 <li>Improve UX component and implement animations for the boards</li>
 <li>Add reminders for users to visit their boards</li>
