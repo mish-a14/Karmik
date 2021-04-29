@@ -1,6 +1,6 @@
-<p align="center">
-<h1>KARMIK</h1>
-</p>
+
+<h1 align="center">KARMIK</h1>
+
 
 <p align="center">
 <img src ="https://i.imgur.com/dSBMO79.png" />
