@@ -8,12 +8,12 @@ You may have heard from time to time that the best way to achieve your goals is 
 
 This is why we have created Karmik, a digital answer to the traditional Vision Board. Karmik allows users to create multiple boards online for different goals in life that they can update and delete at any time in their profile. They can also view their boards anywhere on any device. 
 
-Need a vacation? 
-Searching for a job? 
+>Need a vacation? 
+>Searching for a job? 
 
 Karmik gives you the freedom to create a board for each event that you want to manifest and achieve.  
 
-Technologies used:
+**Technologies used:**
 
 <li>Mongo.js</li>
 <li>Express.js</li>
@@ -22,7 +22,7 @@ Technologies used:
 <li>Material UI</li>
 <br />
 
-Languages:
+**Languages:**
 <li>JavaScript</li>
 <li>HTML</li>
 <li>CSS</li>
