@@ -6,7 +6,8 @@ import Logout from "../../components/Logout/Logout";
 
 class BoardPage extends React.Component {
   state = {
-    board: []
+    board: [],
+    display: []
   };
   // const history = useHistory();
 
@@ -39,7 +40,7 @@ class BoardPage extends React.Component {
             />
           </div>
         </nav>
-        <Board board={this.state.board} />
+        <Board board={this.state.board} display={this.state.display} />
       </div>
     );
   }
