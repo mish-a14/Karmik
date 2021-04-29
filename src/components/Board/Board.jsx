@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
+import './Board.css';
 
 
 import { withStyles } from "@material-ui/core/styles";
@@ -105,8 +106,9 @@ function Board(props) {
         {props.board.length > 0 ? (
           <div className="prev-boards">
             <>
-            {props.board.map( b => <div> {b.name} <img src={b.pictures}/></div>)}
+            {props.board.map( b => <div className="panel"> {b.name} <img src={b.pictures}/></div>)}
               <div className="btn-div">
+              <p>Add New</p>
                 <button>
                   <Link to="/boardform">+</Link>
                 </button>
@@ -118,7 +120,8 @@ function Board(props) {
             <>
               <p className="no-boards">hmm...no vision boards yet!</p>
               <div className="btn-div">
-                <button>
+                <p>Add New</p>
+                <button className="panel-btn">
                   <Link to="/boardform">+</Link>
                 </button>
               </div>
@@ -134,9 +137,9 @@ function Board(props) {
                   onClick={evt => {
                     this.handleOnClick(evt);
                   }}
-                >
+                ><Link to='/board'>
                   +
-                </button>
+                  </Link></button>
               </div>
             </>
           ) : (
