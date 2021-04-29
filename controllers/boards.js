@@ -7,7 +7,7 @@ module.exports = {
 // we want the board to be added to the DataBase
 
 // create a new board
-//TODO make a create board Logic
+//TODO: make a create board Logic
 async function create(req, res) {
   // board.create and then put in the database
   try {
@@ -18,25 +18,28 @@ async function create(req, res) {
       user: req.user._id
     });
 
-    res.status(200).json("let's see if this works");
+    res.status(200).json("Added a new board");
   } catch (err) {
     res.status(400).json(err);
   }
 }
 
 // fetch one of the boards
-//TODO make a fetch request to bring the board to us
+//TODO: make a fetch request to bring the board to us
 // config auth js takes the token
 async function boardIndex(req, res) {
   try {
-    console.log("WE HATE REACT");
     let board = await BoardModel.find({ user: req.user._id })
       .populate()
       .exec();
-    console.log("ONLY ALEX LOVES REACT :P");
-    console.log(board);
     res.status(200).json(board);
   } catch (err) {
     res.status(400).json(err);
   }
 }
+
+// modify board
+// TODO: make modify function for the board
+
+// Delete the board
+// TODO: Make a delete function for the board

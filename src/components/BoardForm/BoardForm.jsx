@@ -30,7 +30,7 @@ class BoardForm extends Component {
       });
       let serverResponse = await fetchResponse.json();
       console.log("Success:", serverResponse);
-      alert(serverResponse);
+      console.log(serverResponse);
       this.setState({ name: "" });
     } catch (err) {
       console.error("Error:", err);
@@ -63,7 +63,7 @@ class BoardForm extends Component {
                   this.handleOnClick(evt);
                 }}
               >
-                Add Board
+                <Link to="/board">Add Board</Link>
               </button>
             </div>
           </form>

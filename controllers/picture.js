@@ -26,3 +26,9 @@ async function create(req, res) {
 // fetch one of the pictures
 
 //TODO make a fetch request to bring the pictures to us
+
+// modify board
+// TODO: make modify function for the board
+
+// Delete the board
+// TODO: Make a delete function for the board
