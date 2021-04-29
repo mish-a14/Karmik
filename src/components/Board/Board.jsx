@@ -181,9 +181,7 @@ class Board extends React.Component {
           ) : (
             <div className="prev-boards">
               <>
-                <p className="no-boards">hmm...no vision boards yet!</p>
                 <div className="btn-div">
-                  <p>Add New</p>
                   <button className="panel-btn">
                     <Link to="/boardform">+</Link>
                   </button>
