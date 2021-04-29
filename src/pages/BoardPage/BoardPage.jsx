@@ -11,6 +11,10 @@ class BoardPage extends React.Component {
   };
   // const history = useHistory();
 
+  updateBoards = (allBoards) => {
+    this.setState({ board: allBoards})
+  }
+
   async componentDidMount() {
     try {
       let jwt = localStorage.getItem("token");
@@ -18,9 +22,7 @@ class BoardPage extends React.Component {
         headers: { Authorization: "Bearer " + jwt }
       });
       let boardObjects = await fetchBoardResponse.json();
-      let boardStrings = boardObjects.map(b => b);
-      this.setState({ board: boardStrings });
-      console.log(boardStrings);
+      this.setState({ board: boardObjects });
     } catch (err) {
       console.error("ERROR:", err);
     }
@@ -40,7 +42,7 @@ class BoardPage extends React.Component {
             />
           </div>
         </nav>
-        <Board board={this.state.board} display={this.state.display} />
+        <Board updateBoards={this.updateBoards} board={this.state.board} display={this.state.display} />
       </div>
     );
   }

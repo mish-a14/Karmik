@@ -28,8 +28,6 @@ class EditBoard extends React.Component {
 
   handleOnModify = async evt => {
     evt.preventDefault();
-    console.log(this.state.name)
-    console.log(this.state.pictures)
     try {
       let jwt = localStorage.getItem("token");
       let fetchResponse = await fetch("/api/board/change", {
@@ -39,7 +37,7 @@ class EditBoard extends React.Component {
           Authorization: "Bearer " + jwt
         },
         body: JSON.stringify({
-          id: this.state._id,
+          id: this.props.id,
           name: this.state.name,
           pictures: this.state.pictures
         })
@@ -60,12 +58,14 @@ class EditBoard extends React.Component {
         change word:{" "}
         <input
           name="name"
+          placeholder={this.props.name}
           value={this.state.name}
           onChange={this.handleChange}
         />
         change pictures:{" "}
         <input
           name="pictures"
+          placeholder={this.props.pictures}
           value={this.state.pictures}
           onChange={this.handleChange}
         />
