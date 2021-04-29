@@ -9,6 +9,7 @@ import SignupPage from "../Signup/SignupPage";
 import Picture from "../../components/Picture/Picture.jsx";
 import Logout from "../../components/Logout/Logout";
 import BoardForm from "../../components/BoardForm/BoardForm";
+import PictureForm from '../PictureForm/PictureForm';
 // import ImageUploader from 'react-images-upload';
 
 class App extends Component {
@@ -42,6 +43,11 @@ class App extends Component {
           <Route
             path="/picture"
             render={props => <Picture {...props} user={this.state.user} />}
+          />
+
+            <Route
+            path="/pictureform"
+            render={props => <PictureForm {...props} user={this.state.user} />}
           />
 
           <Route

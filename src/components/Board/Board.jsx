@@ -121,18 +121,21 @@ function CustomizedDialogs() {
   };
 }
 
-const showBoard = async e => {
-  
-};
+
 
 class Board extends React.Component {
 
   state = {
-    display: {
-      name: "",
-      pictures: []
-    }
+      selectedName: "",
+      selectedPictures: []
   }
+
+  showBoard = (name, avatar) => {
+  this.setState({
+    selectedName: name,
+    selectedAvatar: avatar
+  })
+  };
 
   render() {
   return (
@@ -146,7 +149,7 @@ class Board extends React.Component {
                   {" "}
                   {b.name} <img src={b.pictures} />{" "}
                   <div className="btns">
-                    <button onClick={showBoard}>
+                    <button onClick={() => this.showBoard(b.name, b.pictures)}>
                       <img src="https://i.imgur.com/5WSHwlI.png" />
                     </button>
                     <button
@@ -180,7 +183,7 @@ class Board extends React.Component {
             </>
           </div>
         )}
-      <Showcase />
+      <Showcase name={this.state.selectedName} avatar={this.state.selectedAvatar} />
       </div>
     </div>
   );
