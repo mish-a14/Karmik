@@ -27,7 +27,7 @@ Languages:
 <li>HTML</li>
 <li>CSS</li>
 
-###Future goals:###
+###Future goals:
 
 <li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their boards</li>
 <li>Improve UX component and implement animations for the boards</li>
