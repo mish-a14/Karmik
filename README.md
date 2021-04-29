@@ -1,8 +1,10 @@
-<h1>KARMIK</h1>
+
+<h1 align="center">KARMIK</h1>
 
 
-![Logo](https://i.imgur.com/dSBMO79.png)
-
+<p align="center">
+<img src ="https://i.imgur.com/dSBMO79.png" />
+</p>
 
 <h2>Vision Board Redefined.</h2>
 
@@ -18,7 +20,9 @@ This is why we have created Karmik, a digital answer to the traditional Vision B
 >Thinking of buying your dream home? <br />
 >Searching for a job? 
 
-Karmik gives you the freedom to create a board for every intention you desire to manifest.  
+Karmik gives you the freedom to create a board for every intention you desire to manifest.<br />
+
+<p align="center">
 
 **Technologies used:** |    **Languages:**
 -----------------------|--------------------
@@ -31,42 +35,30 @@ Karmik gives you the freedom to create a board for every intention you desire to
   |    AWS S3    |                 |  
    |    Material UI     |                 |  
 
+</p>
 
-**Technologies used:**
+**<h1 align="center">SNAPSHOTS</h1>**
 
-<li>MongoDB</li>
-<li>Mongoose</li>
-<li>Express.js</li>
-<li>React.js</li>
-<li>Node.js</li>
-<li>Material UI</li>
-<li>React Image UI</li>
-<li>AWS S3</li>
-<br />
+<p align="center">
+<img src="https://i.imgur.com/IICvEAJ.png" />
+</p>
 
-**Languages:**
-<li>JavaScript</li>
-<br />
+<p align="center">
+<img src="https://i.imgur.com/ZWQejYS.png" />
+</p>
 
+<p align="center">
+<img src="https://i.imgur.com/4bbfRJj.png" />
+</p>
 
-**<h1>SNAPSHOTS</h1>**
+**<h2 align="center">Mobile View</h2>**
 
-![Logo](https://i.imgur.com/IICvEAJ.png)
-
-
-![Logo](https://i.imgur.com/cy5DS6n.png)
-
-
-![Logo](https://i.imgur.com/ZWQejYS.png)
-
-
-![Logo](https://i.imgur.com/4bbfRJj.png)
-
-
-
+<p align="center">
+<img src="https://i.imgur.com/cy5DS6n.png" />
+</p>
 
 **Future goals:**
 
-<li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their boards</li>
+<li>We aim to incorporate an image randomizer feature that generates images based on the user’s vision board theme so they have more variety for their    boards</li>
 <li>Improve UX component and implement animations for the boards</li>
 <li>Add reminders for users to visit their boards</li>
