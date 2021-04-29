@@ -13,10 +13,10 @@ You may have heard from time to time that the best way to achieve your goals is 
 
 This is why we have created Karmik, a digital answer to the traditional Vision Board. Karmik allows users to create multiple boards online for different intentions in life that they can update and delete to thier heart's content. Creators are able to view their boards anywhere on any device and continue to dream big! 
 
->Need a vacation? <br />
+>Thinking of buying your dream home? <br />
 >Searching for a job? 
 
-Karmik gives you the freedom to create a board for each event that you want to manifest and achieve.  
+Karmik gives you the freedom to create a board for every intention you desire to manifest.  
 
 **Technologies used:** |    **Languages:**
 -----------------------|--------------------
