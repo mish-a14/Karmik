@@ -127,7 +127,7 @@ function Board(props) {
           <div className="prev-boards">
             <>
               {props.board.map(b => (
-                <div>
+                <div className="panel">
                   {" "}
                   {b.name} <img src={b.pictures} />{" "}
                   <button
@@ -135,7 +135,7 @@ function Board(props) {
                       this.handleOnModify(evt);
                     }}
                   >
-                    Delete board
+                    <img src="https://i.imgur.com/XXoPWe5.png"/>
                   </button>
                 </div>
               ))}

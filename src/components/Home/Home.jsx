@@ -13,7 +13,7 @@ function Home(props) {
             goals.
           </p>
         </div>
-        <div className="btn-div">
+        <div className="btn-signup">
           <button>
             <Link to="/signup">sign up</Link>
           </button>
