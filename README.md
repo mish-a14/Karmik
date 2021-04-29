@@ -14,6 +14,17 @@ This is why we have created Karmik, a digital answer to the traditional Vision B
 
 Karmik gives you the freedom to create a board for each event that you want to manifest and achieve.  
 
+**Technologies used:** |    **Languages:**
+-----------------------|---------------------
+<li>Mongo.js</li>      | <li>JavaScript</li>
+<li>Express.js</li>    |  <li>HTML</li>
+<li>React.js</li>      |  <li>CSS</li>
+<li>Node.js</li>       |
+<li>Material UI</li>   |
+
+
+
+
 **Technologies used:**
 
 <li>Mongo.js</li>
