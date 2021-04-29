@@ -1,4 +1,5 @@
 <h1>KARMIK</h1>
+Markup : ![picture alt](https://github.com/matiassingers/awesome-readme/raw/master/icon.png "Title is optional")
 LINK TO PROJECT
 <h2>Vision Board Redefined.</h2>
 
