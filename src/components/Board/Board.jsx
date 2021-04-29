@@ -120,9 +120,9 @@ function CustomizedDialogs() {
   };
 }
 
-  const showBoard = async (e) => {
-    let display = await fetch('api/boards')
-  }
+const showBoard = async e => {
+  let display = await fetch("api/boards");
+};
 
 function Board(props) {
   return (
@@ -136,16 +136,16 @@ function Board(props) {
                   {" "}
                   {b.name} <img src={b.pictures} />{" "}
                   <div className="btns">
-                  <button>
-                    <img src="https://i.imgur.com/5WSHwlI.png"/>
-                  </button>
-                  <button
-                    onClick={evt => {
-                      handleOnModify(evt);
-                    }}
-                  >
-                    <img src="https://i.imgur.com/XXoPWe5.png"/>
-                  </button>
+                    <button>
+                      <img src="https://i.imgur.com/5WSHwlI.png" />
+                    </button>
+                    <button
+                      onClick={evt => {
+                        handleOnModify(evt);
+                      }}
+                    >
+                      <img src="https://i.imgur.com/XXoPWe5.png" />
+                    </button>
                   </div>
                 </div>
               ))}
