@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Picture from "../Picture/Picture.jsx";
-import './Board.css';
+import "./Board.css";
 
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -57,6 +57,30 @@ const DialogActions = withStyles(theme => ({
   }
 }))(MuiDialogActions);
 
+const handleOnModify = async evt => {
+  evt.preventDefault();
+  try {
+    let jwt = localStorage.getItem("token");
+    let fetchResponse = await fetch("/api/board/change", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + jwt
+      },
+      body: JSON.stringify({
+        name: this.state.name,
+        pictures: this.state.pictures
+      })
+    });
+    let serverResponse = await fetchResponse.json();
+    console.log("Success:", serverResponse);
+    console.log(serverResponse);
+    this.setState({ name: "" });
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
+
 function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
 
@@ -65,30 +89,6 @@ function CustomizedDialogs() {
   };
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const handleOnModify = async evt => {
-    evt.preventDefault();
-    try {
-      let jwt = localStorage.getItem("token");
-      let fetchResponse = await fetch("/api/board/change", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + jwt
-        },
-        body: JSON.stringify({
-          name: this.state.name,
-          pictures: this.state.pictures
-        })
-      });
-      let serverResponse = await fetchResponse.json();
-      console.log("Success:", serverResponse);
-      console.log(serverResponse);
-      this.setState({ name: "" });
-    } catch (err) {
-      console.error("Error:", err);
-    }
   };
 
   const handleOnClick = async evt => {
@@ -132,7 +132,7 @@ function Board(props) {
                   {b.name} <img src={b.pictures} />{" "}
                   <button
                     onClick={evt => {
-                      this.handleOnModify(evt);
+                      handleOnModify(evt);
                     }}
                   >
                     Delete board
@@ -140,7 +140,7 @@ function Board(props) {
                 </div>
               ))}
               <div className="btn-div">
-              <p>Add New</p>
+                <p>Add New</p>
                 <button>
                   <Link to="/boardform">+</Link>
                 </button>
@@ -169,9 +169,9 @@ function Board(props) {
                   onClick={evt => {
                     this.handleOnClick(evt);
                   }}
-                ><Link to='/board'>
-                  +
-                  </Link></button>
+                >
+                  <Link to="/board">+</Link>
+                </button>
               </div>
             </>
           ) : (
