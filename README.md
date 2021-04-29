@@ -2,7 +2,7 @@
 <h1>KARMIK</h1>
 </p>
 
-<p align="center">>
+<p align="center">
 <img src ="https://i.imgur.com/dSBMO79.png" />
 </p>
 
