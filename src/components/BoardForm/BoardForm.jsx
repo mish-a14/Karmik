@@ -13,6 +13,7 @@ class BoardForm extends Component {
   handleChange = evt => {
     this.setState({ [evt.target.name]: evt.target.value });
   };
+
   handleOnClick = async evt => {
     evt.preventDefault();
     try {

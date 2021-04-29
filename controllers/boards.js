@@ -2,7 +2,9 @@ const BoardModel = require("../models/board.js");
 
 module.exports = {
   create,
-  boardIndex
+  boardIndex,
+  boardModify,
+  boardDelete
 };
 // we want the board to be added to the DataBase
 
@@ -40,6 +42,24 @@ async function boardIndex(req, res) {
 
 // modify board
 // TODO: make modify function for the board
+async function boardModify(req, res) {
+  try {
+    console.log(req.body.board);
+    let board = await BoardModel.find({ board: req.body.board });
+  } catch (e) {
+  } finally {
+    alert("Finished the boardModify function");
+  }
+}
 
 // Delete the board
 // TODO: Make a delete function for the board
+
+async function boardDelete(req, res) {
+  try {
+    let board = await BoardModel.find({ board: req.body.board });
+  } catch (e) {
+  } finally {
+    alert("Finished the boardDelete function");
+  }
+}
