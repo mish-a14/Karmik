@@ -106,13 +106,13 @@ class EditBoard extends React.Component {
   render() {
     return (
       <div className="board">
-        Please enter Name :{" "}
+        change word:{" "}
         <input
           name="name"
           value={this.props.name}
           onChange={this.handleChange}
         ></input>
-        change pictures:{" "}
+        change picture:{" "}
         <input
           name="pictures"
           value={this.props.pictures}
@@ -123,7 +123,7 @@ class EditBoard extends React.Component {
             this.handleOnModify(evt);
           }}
         >
-          <img src="https://i.imgur.com/5WSHwlI.png" />
+          Enter
         </button>
       </div>
     );

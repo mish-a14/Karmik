@@ -5,6 +5,7 @@ const boardSchema = new Schema(
   {
     name: String,
     user: { type: Schema.Types.ObjectId, ref: "User" },
+    // this is avatar?
     pictures: { type: Schema.Types.String, ref: "Picture" }
   },
   {

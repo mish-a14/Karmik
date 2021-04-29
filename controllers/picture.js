@@ -12,7 +12,7 @@ async function create(req, res) {
   // pictures.create and then put in the database
   try {
     await PictureModel.create({
-      name: req.body.name,
+      name: 'hello',
       board: req.body.board,
       url: req.body.url
     });

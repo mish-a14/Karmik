@@ -98,15 +98,46 @@ function CustomizedDialogs() {
   };
 }
 
-const showBoard = async e => {};
 
 class Board extends React.Component {
   state = {
-    name: "",
-    pictures: [],
+    selectedName: "",
+    selectedAvatar: [],
     userIsEdit: false,
     user: ""
   };
+
+  handleDelete = async board => {
+    try {
+      let jwt = localStorage.getItem("token");
+      let deleted = await fetch("/api/board/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + jwt
+        },
+        body: JSON.stringify({
+          board: board
+        })
+      });
+      console.log("processed to the end")
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  }
+
+  showBoard = (name, avatar) => {
+    this.setState({
+      selectedName: name,
+      selectedAvatar: avatar
+    })
+    };
+
+  handleEdit = () => {
+    this.setState({
+      userIsEdit: true,
+    })
+  }
 
   render() {
     return (
@@ -118,23 +149,29 @@ class Board extends React.Component {
                 {this.props.board.map(b => (
                   <div className="panel">
                     {" "}
-                    {b.name} <img src={b.pictures} />{" "}
-                    {b._id}
+                    {b.name} <img src={b.pictures} />
                     <div className="btns">
-                      <button onClick={showBoard}>
+                    <button onClick={() => this.showBoard(b.name, b.pictures)}>
                         <img src="https://i.imgur.com/5WSHwlI.png" />
                       </button>
-                      <button>
-                        <img src="https://i.imgur.com/5WSHwlI.png" />
+                      <button
+                     onClick={() => {
+                       this.handleEdit();
+                     }}
+                   >
+                        <img src="https://i.imgur.com/rd5PUNr.png" />
                       </button>
-                      <button>
+                      <button
+                     onClick={() => {
+                       this.handleDelete(b._id);
+                     }}
+                   >
                         <img src="https://i.imgur.com/XXoPWe5.png" />
                       </button>
                     </div>
                   </div>
                 ))}
                 <div className="btn-div">
-                  <p>Add New</p>
                   <button>
                     <Link to="/boardform">+</Link>
                   </button>
@@ -157,7 +194,7 @@ class Board extends React.Component {
           {this.state.userIsEdit ? (
             <EditBoard name={this.state.name} pictures={this.state.pictures} id={this.state._id}/>
           ) : (
-            <Showcase />
+            <Showcase name={this.state.selectedName} avatar={this.state.selectedAvatar} />
           )}
         </div>
       </div>

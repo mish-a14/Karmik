@@ -6,26 +6,8 @@ class Showcase extends React.Component {
     render() {
     return(
 <div className="showcase">
-{/* {props.board.length > 0 ? ( */}
-  <>
-    <div className="btn-div">
-      <button
-        onClick={evt => {
-          this.handleOnClick(evt);
-        }}
-      >
-        <Link to="/board">+</Link>
-      </button>
-    </div>
-  </>
-) : (
-  <>
-    <p>
-      looking to get started? popular board topics include: career,
-      travel, and lifestyle.
-    </p>
-  </>
-)}
+  <div className="pic-name">{this.props.name}</div>
+  <div className="pic-pic"><img src={this.props.avatar}/></div>
 </div>
     )
 }
