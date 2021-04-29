@@ -1,5 +1,5 @@
 <h1>KARMIK</h1>
-https://github.com/matiassingers/awesome-readme/raw/master/icon.png
+LINK TO PROJECT
 <h2>Vision Board Redefined.</h2>
 
 Karmik is our first React project that boasts full CRUD functionality and incorporates all of the MERN-stack technologies. 
