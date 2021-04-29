@@ -16,3 +16,8 @@
 .board-form .form input {
   margin: 0px 20px;
 }
+
+.board-form .form button a {
+  text-decoration: none;
+  color: black;
+}

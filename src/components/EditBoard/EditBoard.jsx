@@ -57,7 +57,7 @@ class EditBoard extends React.Component {
   render() {
     return (
       <div className="board">
-        Please enter Name :{" "}
+        change word:{" "}
         <input
           name="name"
           value={this.state.name}
@@ -74,7 +74,7 @@ class EditBoard extends React.Component {
             this.handleOnModify(evt);
           }}
         >
-          <img src="https://i.imgur.com/5WSHwlI.png" />
+          Enter
         </button>
       </div>
     );

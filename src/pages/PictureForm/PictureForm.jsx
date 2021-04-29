@@ -1,13 +1,11 @@
-import { token } from "morgan";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Picture from "../Picture/Picture.jsx";
-import "./BoardForm.css";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-class BoardForm extends Component {
+
+class PictureForm extends React.Component {
   state = {
-    name: "",
-    pictures: ""
+    board: "",
+    url: ""
   };
 
   handleChange = evt => {
@@ -18,21 +16,21 @@ class BoardForm extends Component {
     evt.preventDefault();
     try {
       let jwt = localStorage.getItem("token");
-      let fetchResponse = await fetch("/api/board", {
+      let fetchResponse = await fetch("/api/picture", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: "Bearer " + jwt
         },
         body: JSON.stringify({
-          name: this.state.name,
-          pictures: this.state.pictures
+          board: this.state.board,
+          url: this.state.url
+
         })
       });
       let serverResponse = await fetchResponse.json();
       console.log("Success:", serverResponse);
       console.log(serverResponse);
-      this.setState({ name: "" });
     } catch (err) {
       console.error("Error:", err);
     }
@@ -47,24 +45,24 @@ class BoardForm extends Component {
         <div className="board-form">
           <form>
             <div className="form">
-              what type of inspo is this? :{" "}
+              Add Picture? {" "}
               <input
-                name="name"
-                value={this.state.name}
+                name="url"
+                value={this.state.url}
                 onChange={this.handleChange}
               />
-              picture url :{" "}
-              <input
-                name="pictures"
-                value={this.state.pictures}
-                onChange={this.handleChange}
-              />
+              To which board?
+              <input 
+              name="board"
+              value={this.state.board}
+            onChange={this.handleChange}
+            />
               <button
                 onClick={evt => {
                   this.handleOnClick(evt);
                 }}
               >
-                <Link to="/board">add board</Link>
+                <Link to="/board">Add Picture</Link>
               </button>
             </div>
           </form>
@@ -74,4 +72,4 @@ class BoardForm extends Component {
   }
 }
 
-export default BoardForm;
+export default PictureForm;
