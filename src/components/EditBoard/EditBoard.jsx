@@ -105,7 +105,7 @@ class EditBoard extends React.Component {
 
   render() {
     return (
-      <div className="board">
+      <div className="showcase">
         change word:{" "}
         <input
           name="name"
@@ -118,7 +118,7 @@ class EditBoard extends React.Component {
           value={this.props.pictures}
           onChange={this.handleChange}
         ></input>
-        <button
+        <button className="edit-btn"
           onClick={evt => {
             this.handleOnModify(evt);
           }}
