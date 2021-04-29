@@ -16,11 +16,11 @@ Karmik gives you the freedom to create a board for each event that you want to m
 
 **Technologies used:** |    **Languages:**
 -----------------------|---------------------
-       Mongo.js              JavaScript
-<li>Express.js</li>    |  <li>HTML</li>
-<li>React.js</li>      |  <li>CSS</li>
-<li>Node.js</li>       |
-<li>Material UI</li>   |
+       Mongo.js        |     JavaScript
+       Express.js      |        HTML
+       React.js        |         CSS
+       Node.js         |
+       Material UI     |      
 
 
 
