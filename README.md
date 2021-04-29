@@ -1,5 +1,4 @@
 <h1>KARMIK</h1>
-Markup : ![picture alt](https://github.com/matiassingers/awesome-readme/raw/master/icon.png "Title is optional")
 LINK TO PROJECT
 <h2>Vision Board Redefined.</h2>
 
@@ -15,12 +14,13 @@ Searching for a job?
 Karmik gives you the freedom to create a board for each event that you want to manifest and achieve.  
 
 Technologies used: 
-
-Mongo.js/Mongoose 
+<li>
+Mongo.js
 Express.js
 React.js
 Node.js
 Material UI
+</li>
 
 Languages:
 JavaScript 
