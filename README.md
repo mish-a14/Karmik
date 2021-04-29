@@ -1,6 +1,6 @@
 <h1>KARMIK</h1>
 
-Vision Board Redefined.
+<h2>Vision Board Redefined.</h2>
 
 Karmik is our first React project that boasts full CRUD functionality and incorporates all of the MERN-stack technologies. 
 
