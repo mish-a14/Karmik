@@ -9,7 +9,7 @@
 <h2>Vision Board Redefined.</h2>
 
 <h3>Visit Karmik</h3>
-LINK BELOW 
+https://karmik.herokuapp.com/
 
 Karmik is our first React project that boasts full CRUD functionality and incorporates all of the MERN-stack technologies. 
 
