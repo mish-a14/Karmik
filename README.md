@@ -51,6 +51,10 @@ Karmik gives you the freedom to create a board for every intention you desire to
 <img src="https://i.imgur.com/4bbfRJj.png" />
 </p>
 
+<p align="center">
+<img src="image.png" />
+</p>
+
 **<h2 align="center">Mobile View</h2>**
 
 <p align="center">
