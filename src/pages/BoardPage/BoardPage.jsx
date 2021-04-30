@@ -11,9 +11,9 @@ class BoardPage extends React.Component {
   };
   // const history = useHistory();
 
-  updateBoards = (allBoards) => {
-    this.setState({ board: allBoards})
-  }
+  updateBoards = allBoards => {
+    this.setState({ board: allBoards });
+  };
 
   async componentDidMount() {
     try {
@@ -42,7 +42,11 @@ class BoardPage extends React.Component {
             />
           </div>
         </nav>
-        <Board updateBoards={this.updateBoards} board={this.state.board} display={this.state.display} />
+        <Board
+          updateBoards={this.updateBoards}
+          board={this.state.board}
+          display={this.state.display}
+        />
       </div>
     );
   }
