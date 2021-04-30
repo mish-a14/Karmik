@@ -43,14 +43,14 @@ async function boardIndex(req, res) {
 // TODO: make modify function for the board
 async function boardModify(req, res) {
   try {
-    console.log("REQ>BODY")
-    console.log(req.body);
-    let board = await BoardModel.findByIdAndUpdate(req.body.id, { name: req.body.name, pictures: req.body.pictures });
-    console.log(board)
+    let board = await BoardModel.findByIdAndUpdate(req.body.id, {
+      name: req.body.name,
+      pictures: req.body.pictures
+    });
     res.status(200).json(board);
   } catch (e) {
     res.status(400).json(e);
-    console.log("I AM AN ERROR", e)
+    console.log("I AM AN ERROR", e);
   }
 }
 
@@ -60,10 +60,10 @@ async function boardModify(req, res) {
 async function boardDelete(req, res) {
   try {
     let board = await BoardModel.findByIdAndDelete(req.body.board);
-    let allBoards = await BoardModel.find({ user: req.user._id })
-    res.status(200).json(allBoards)
+    let allBoards = await BoardModel.find({ user: req.user._id });
+    res.status(200).json(allBoards);
   } catch (err) {
-    console.log("Error", err)
-    res.status(400).json()
+    console.log("Error", err);
+    res.status(400).json();
   }
 }
