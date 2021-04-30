@@ -58,7 +58,7 @@ class EditBoard extends React.Component {
 
   render() {
     return (
-      <div className="board">
+      <div className="showcase">
         change word:{" "}
         <input
           name="name"
