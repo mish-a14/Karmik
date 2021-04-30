@@ -14,11 +14,14 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
-
 class EditBoard extends React.Component {
   state = {
-    name: "",
-    pictures: "",
+    name: `${this.props.name}`,
+    pictures: `${this.props.pictures}`
+  };
+
+  updateBoards = allBoards => {
+    this.setState({ board: allBoards });
   };
 
   handleChange = evt => {
@@ -42,11 +45,12 @@ class EditBoard extends React.Component {
           pictures: this.state.pictures
         })
       });
-      console.log("inside the try");
       let serverResponse = await fetchResponse.json();
       console.log("Success:", serverResponse);
       console.log(serverResponse);
       this.setState({ name: "" });
+      let allBoards = await fetchResponse.json();
+      this.props.updateBoards(allBoards);
     } catch (err) {
       console.error("Error:", err);
     }
@@ -58,14 +62,14 @@ class EditBoard extends React.Component {
         change word:{" "}
         <input
           name="name"
-          placeholder={this.props.name}
+          // placeholder={this.props.name}
           value={this.state.name}
           onChange={this.handleChange}
         />
         change pictures:{" "}
         <input
           name="pictures"
-          placeholder={this.props.pictures}
+          // placeholder={this.props.pictures}
           value={this.state.pictures}
           onChange={this.handleChange}
         />
