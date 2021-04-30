@@ -1,0 +1,19 @@
+.edit-btn {
+  width: 80px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #d8caaf;
+  margin: 20px 0px;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.showcase input {
+  padding: 5px 10px;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 8px;
+  margin: 5px 0px;
+}
