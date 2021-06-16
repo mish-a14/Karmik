@@ -3,7 +3,8 @@
 
 
 <p align="center">
-<img src ="https://i.imgur.com/dSBMO79.png" />
+<!-- <img src ="https://i.imgur.com/dSBMO79.png" /> -->
+<img src ="https://imgur.com/WimygmP.png" />
 </p>
 
 <h2>Vision Board Redefined.</h2>
